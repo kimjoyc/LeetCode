@@ -26,3 +26,31 @@ Constraints:
 1 <= nums.length <= 105
 -109 <= nums[i] <= 109
 */
+class Solution {
+public:
+    // Function to check if the input vector contains any duplicate elements.
+    bool containsDuplicate(vector<int>& nums) {
+        // Create an unordered map to store the count of each number.
+        unordered_map<int, int> map_of_nums;
+
+        // Iterate through each number in the input vector.
+        for(auto n : nums) {
+            // Increment the count of the current number in the map.
+            map_of_nums[n]++;
+        }
+
+        // Initialize a flag to indicate whether a duplicate was found.
+        bool flag = false;
+
+        // Iterate through the map to check for duplicates.
+        for (auto map : map_of_nums) {
+            // If a number appears more than once, set the flag to true.
+            if(map.second >= 2) {
+                flag = true;
+            }
+        }
+
+        // Return the flag, indicating whether duplicates were found.
+        return flag;
+    }
+};
