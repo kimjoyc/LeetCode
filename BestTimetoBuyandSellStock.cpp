@@ -30,7 +30,27 @@ Constraints:
 1 <= prices.length <= 105
 0 <= prices[i] <= 104
 */
+class Solution {
+public:
+    int maxProfit(vector<int>& prices) {
 
+        // Initialize variables to keep track of maximum profit and minimum price seen so far.
+        int max_prof = 0;  // Maximum profit initialized to 0.
+        int min_price = prices[0];  // Minimum price initialized to the first element in the prices array.
+
+        // Loop through the prices array starting from the second element.
+        for (int i = 1; i < prices.size(); i++) {
+            // Update maximum profit by comparing the current maximum profit and the difference between current price and minimum price seen so far.
+            max_prof = max(max_prof, prices[i] - min_price);
+
+            // Update the minimum price seen so far by comparing the current price and the previous minimum price.
+            min_price = min(prices[i], min_price);
+        }
+
+        // Return the maximum profit that can be obtained.
+        return max_prof;
+    }
+};
 
 
 /*
