@@ -52,11 +52,6 @@ Explanation: No transactions are done, max profit = 0.
 0 <= prices[i] <= 104
 
 ### Solution
-To solve this problem, we initialize two variables: max_prof to keep track of the maximum profit and min_price to keep track of the minimum price seen so far. We start iterating through the prices array from the second element.
+The provided C++ code defines a Solution class with a maxProfit function. This algorithm efficiently calculates the maximum profit that can be achieved by iterating through the given stock prices array. It keeps track of the maximum profit and the minimum price seen so far while traversing the array. The algorithm achieves a time complexity of O(n) and a space complexity of O(1), where n is the size of the input prices array.
 
-For each price, we calculate the potential profit by subtracting the minimum price seen so far (min_price) from the current price. We update the maximum profit (max_prof) if the potential profit is greater and update the minimum price accordingly.
 
-The time complexity of this approach is O(n) as we iterate through the prices array once. The space complexity is O(1) since we only use a constant amount of extra space for variables (max_prof, min_price, i).
-
-Time complexity: O(n) (linear time complexity)
-Space complexity: O(1) (constant space complexity)
