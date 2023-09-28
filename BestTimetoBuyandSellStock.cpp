@@ -54,5 +54,19 @@ public:
 
 
 /*
+Time Complexity Analysis:
+The time complexity of this function is O(n), where n is the size of the input vector prices.
 
+The for loop iterates through the prices vector once, so it's a linear time complexity O(n) operation.
+Inside the loop, we have constant time operations such as comparisons and assignments (max, min, etc.), which don't affect the overall time complexity.
+Space Complexity Analysis:
+The space complexity of this function is O(1), which means it uses a constant amount of extra space regardless of the size of the input.
+
+The variables max_prof and min_price are integers and use a constant amount of space.
+The loop variable i is also an integer and uses constant space.
+There are no data structures or arrays whose space requirements depend on the size of the input.
+In summary:
+
+Time complexity: O(n) (linear time complexity)
+Space complexity: O(1) (constant space complexity)
 */
