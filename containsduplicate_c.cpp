@@ -54,3 +54,39 @@ public:
         return flag;
     }
 };
+
+
+/*
+Time Complexity Analysis
+The time complexity of this solution is primarily determined by the two main loops in the function:
+
+The loop to populate the unordered map with counts for each element in the input vector nums.
+The loop to check if any element has a count greater than or equal to 2 in the unordered map.
+Let's break down the time complexity step by step:
+
+Populating the Unordered Map:
+
+In the first loop, we iterate over each element in the input vector nums, which has n elements.
+Inserting an element into an unordered map has an average time complexity of O(1) assuming a good hash function.
+Therefore, populating the unordered map has a time complexity of O(n), where n is the length of the input vector nums.
+Checking for Duplicates in the Unordered Map:
+
+In the second loop, we iterate over the unordered map, which has at most n elements (where n is the length of the input vector nums).
+Checking each entry in the unordered map has a time complexity of O(1).
+Therefore, checking for duplicates in the unordered map has a time complexity of O(n), where n is the number of unique elements in the input vector nums.
+Hence, the overall time complexity of the containsDuplicate function is O(n), where n is the length of the input vector nums.
+
+Space Complexity Analysis
+The space complexity of this solution is primarily determined by the space used by the unordered map map_of_nums to store the counts of each element in the input vector nums.
+
+Unordered Map:
+In the worst case, when all elements in nums are distinct, the unordered map map_of_nums will have at most n entries (where n is the length of the input vector nums).
+The space required for an unordered map with n entries is O(n).
+Therefore, the overall space complexity of the containsDuplicate function is O(n) due to the space used by the unordered map.
+
+In summary:
+
+Time Complexity: O(n)
+Space Complexity: O(n)
+
+*/
