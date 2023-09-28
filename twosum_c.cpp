@@ -56,3 +56,17 @@ public:
         return {};
     }
 };
+
+/*
+
+The given algorithm aims to find two indices in the input array 'nums' such that the elements at those indices sum up to the given 'target'. 
+
+Time Complexity:
+The time complexity of the provided algorithm is O(n^2) due to the nested loop. The algorithm iterates through the array 'nums' twice, resulting in a time complexity that grows quadratically with the size of the input array.
+
+Space Complexity:
+The space complexity of the algorithm is O(1) since it only uses a few extra variables for iteration and does not depend on the size of the input array. The returned vector of indices has a constant size (always two elements), so it doesn't contribute to the space complexity as the input size grows.
+
+Follow-up:
+To achieve less than O(n^2) time complexity, we can use a hash map to store previously seen numbers and their indices. This can reduce the time complexity to O(n) at the cost of slightly increased space complexity. If you'd like, I can provide an example of how to modify the algorithm to achieve this.
+*/
