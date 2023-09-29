@@ -55,3 +55,35 @@ Explanation: No transactions are done, max profit = 0.
 The provided C++ code defines a Solution class with a maxProfit function. This algorithm efficiently calculates the maximum profit that can be achieved by iterating through the given stock prices array. It keeps track of the maximum profit and the minimum price seen so far while traversing the array. The algorithm achieves a time complexity of O(n) and a space complexity of O(1), where n is the size of the input prices array.
 
 
+## Valid Anagram
+This code provides a solution to determine if two given strings, s and t, are anagrams of each other. An anagram is a word or phrase formed by rearranging the letters of another word or phrase, using all the original letters exactly once.
+
+### Example
+Input
+s = "anagram", t = "nagaram"
+Output
+true
+Input
+s = "rat", t = "car"
+Output
+false
+
+### Constraints
+1 <= s.length, t.length <= 5 * 10^4
+s and t consist of lowercase English letters.
+### Solution
+The approach involves comparing the character counts in both strings. If the counts for each character are the same, the strings are anagrams.
+
+Check if the lengths of s and t are different, in which case they can't be anagrams.
+Initialize a hash map to count the occurrences of characters in both strings.
+Iterate through each character in s and t, updating the character counts in the hash map.
+Check if all character counts are equal; if they are, the strings are anagrams.
+
+Time Complexity
+The time complexity is O(n), where n is the length of the strings, due to the linear iteration through the strings to build the count map.
+
+Space Complexity
+The space complexity is O(1) as the space used is not dependent on the input size but rather on a fixed number of lowercase English letters.
+
+Handling Unicode Characters (Follow-up)
+If the inputs contain Unicode characters, adapt the solution by using a hash map or an array of appropriate size to accommodate the larger character set. The time complexity remains O(n), and the space complexity becomes O(k), where k is the size of the character set (e.g., 128 for ASCII, or a larger value for Unicode).
