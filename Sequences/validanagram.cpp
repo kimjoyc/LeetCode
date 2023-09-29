@@ -34,7 +34,42 @@ s and t consist of lowercase English letters.
 
 Follow up: What if the inputs contain Unicode characters? How would you adapt your solution to such a case?
 */
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
 
+        // Check if the lengths of strings s and t are different, which means they can't be anagrams
+        if(s.length() != t.length())
+        {
+            return false;
+        }
+
+        // Initialize a hash map for counting the occurrences of characters in strings s and t
+        unordered_map<char, int> count_map;
+
+        // Iterate through the characters of string s
+        for(int i = 0; i < s.length(); i++)
+        {
+            // Count occurrences of each character in string s and increment the count
+            count_map[s[i]]++;
+            // Count occurrences of each character in string t and decrement the count
+            count_map[t[i]]--;
+        }
+
+        // Iterate through the map using a ranged-based for loop
+        for(auto count : count_map)
+        {
+            // Check if there are non-zero counts in the map, indicating a mismatch in character counts
+            if(count.second)
+            {
+                return false;
+            }
+        }
+
+        // If all characters have the same count in both strings, they are anagrams
+        return true;
+    }
+};
 
 /*
 
