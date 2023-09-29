@@ -72,5 +72,17 @@ public:
 };
 
 /*
+Time Complexity Analysis
+Checking lengths of s and t: O(1)
+Building the count map by iterating through the characters of s and t: O(n), where n is the length of the strings (since iterating through both strings takes linear time)
+Iterating through the count map and checking for non-zero counts: O(26) or O(1) since there are a fixed number of lowercase English letters
+The overall time complexity is O(n) due to the linear iteration through the strings to build the count map.
 
+Space Complexity Analysis
+Count map to store occurrences of characters: O(1) as there can be a maximum of 26 lowercase English letters (constant space)
+Additional variables and constants used: O(1)
+The overall space complexity is O(1) as the space used is not dependent on the input size but rather on a fixed number of lowercase English letters.
+
+Handling Unicode Characters (Follow-up)
+If the inputs contain Unicode characters, we would need to adapt the solution to handle a larger character set. In this case, we would use a hash map or an array of size 128 (assuming ASCII characters) or even larger to accommodate a broader range of Unicode characters. The time complexity would still be O(n) for iterating through the strings, and the space complexity would be O(k) where k is the size of the character set (e.g., 128 for ASCII, or a larger value for Unicode).
 */
