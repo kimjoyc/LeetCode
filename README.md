@@ -31,7 +31,7 @@ Output: [0,1]
 -109 <= target <= 109
 
 ### Solution
-The provided C++ code defines a Solution class with a function twoSum that uses a hash map to store previously seen numbers and their indices. The algorithm achieves O(n) time complexity and O(n) space complexity.
+The provided C++ code defines a Solution class with a function twoSum that uses a hash map to store previously seen numbers and their indices. The algorithm achieves O(n^2) time complexity and O(1) space complexity.
 
 
 ## Best Time to Buy and Sell Stock
