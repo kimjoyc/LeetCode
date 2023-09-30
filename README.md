@@ -87,3 +87,72 @@ The space complexity is O(1) as the space used is not dependent on the input siz
 
 Handling Unicode Characters (Follow-up)
 If the inputs contain Unicode characters, adapt the solution by using a hash map or an array of appropriate size to accommodate the larger character set. The time complexity remains O(n), and the space complexity becomes O(k), where k is the size of the character set (e.g., 128 for ASCII, or a larger value for Unicode).
+
+
+## Valid Parentheses
+### Problem Statement
+Given a string s containing just the characters '(', ')', '{', '}', '[', and ']', determine if the input string is valid.
+
+An input string is valid if:
+Open brackets must be closed by the same type of brackets.
+Open brackets must be closed in the correct order.
+Every closing bracket has a corresponding open bracket of the same type.
+
+### Example
+Example 1:
+
+Input:
+s = "()"
+Output:
+true
+Example 2:
+
+Input:
+s = "()[]{}"
+Output:
+Example 3:
+
+Input:
+s = "(]"
+Output:
+false
+### Constraints
+1 <= s.length <= 10^4
+s consists of parentheses only '()[]{}'.
+
+
+### Solution
+The problem requires determining whether a given string of parentheses is valid according to certain rules:
+
+1. Open brackets must be closed by the same type of brackets.
+2. Open brackets must be closed in the correct order.
+3. Every closing bracket has a corresponding open bracket of the same type.
+
+The provided C++ code uses a stack-based approach. 
+
+Initialize a Stack: The algorithm starts by creating an empty stack to keep track of open brackets encountered while iterating through the input string.
+
+Iterate through the Input String: The algorithm iterates through each character in the input string.
+
+Handling Open Brackets: If the current character is an open bracket ('(', '[', or '{'), it is pushed onto the stack, indicating that an open bracket has been encountered.
+
+Handling Closing Brackets: If the current character is a closing bracket (')', ']', or '}'), the algorithm checks if the stack is not empty (indicating there was a matching open bracket). It also checks if the top of the stack corresponds to the expected open bracket for the current closing bracket. If the conditions are met, the top element (matching open bracket) is popped from the stack.
+
+Checking Validity: If any of the conditions for a valid string of parentheses are violated (e.g., mismatched brackets or a closing bracket without a corresponding open bracket), the algorithm immediately returns false, indicating an invalid string.
+
+Final Check: After iterating through the input string, the algorithm checks if the stack is empty. If the stack is empty, it means all open brackets have been successfully closed, and the input string is valid. If the stack is not empty, it means there are unmatched open brackets, and the input string is invalid.
+
+Return Result: The algorithm returns true if the stack is empty (indicating a valid string of parentheses) and false otherwise (indicating an invalid string).
+
+Time Complexity Analysis
+The time complexity of the solution is O(n), where n is the length of the input string s. The for loop iterates through each character in the input string, taking O(n) time. Inside the loop, each operation (push, pop, and top) on the stack takes O(1) time.
+
+Space Complexity Analysis
+The space complexity of the solution is O(n), where n is the length of the input string s. The space used by the stack is proportional to the number of open brackets in the input string. In the worst case, if all characters in the input string are open brackets, the stack could contain all of them, resulting in O(n) space usage.
+
+This algorithm efficiently validates the input string for valid parentheses using a stack-based approach, ensuring adherence to the specified rules for valid parentheses.
+
+
+
+
+
