@@ -152,7 +152,36 @@ The space complexity of the solution is O(n), where n is the length of the input
 
 This algorithm efficiently validates the input string for valid parentheses using a stack-based approach, ensuring adherence to the specified rules for valid parentheses.
 
+## Maximum Subarray Sum
+### Problem Statement
+Given an integer array nums, find the contiguous subarray with the largest sum and return the sum of that subarray.
 
+### Example
+nums = [-2,1,-3,4,-1,2,1,-5,4]
+Output
+6
+Explanation
+The subarray [4,-1,2,1] has the largest sum, which is 6.
+Constraints
+1 <= nums.length <= 105
+-104 <= nums[i] <= 104
+
+### Solution 
+Initialize variables to store the current subarray sum (currSubArr_sum) and the maximum subarray sum (maxSubArr_sum) to the first element of the input array.
+
+Iterate through the array starting from the second element.
+
+For each element, calculate the current subarray sum by choosing the maximum between the current element and the sum of the previous subarray plus the current element.
+
+Update the maximum subarray sum by choosing the maximum between the previous maximum subarray sum and the current subarray sum.
+
+Return the maximum subarray sum.
+
+Time Complexity
+The time complexity of this solution is O(n), where n is the size of the input vector nums. This is because the function iterates through the input vector once, performing a constant number of operations for each element.
+
+Space Complexity
+The space complexity is O(1), indicating constant space usage. The function uses only a few integer variables (currSubArr_sum and maxSubArr_sum) to keep track of the current and maximum subarray sums. The space used is independent of the input size and remains constant.
 
 
 
