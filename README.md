@@ -130,25 +130,11 @@ The problem requires determining whether a given string of parentheses is valid 
 
 The provided C++ code uses a stack-based approach. 
 
-Initialize a Stack: The algorithm starts by creating an empty stack to keep track of open brackets encountered while iterating through the input string.
-
-Iterate through the Input String: The algorithm iterates through each character in the input string.
-
-Handling Open Brackets: If the current character is an open bracket ('(', '[', or '{'), it is pushed onto the stack, indicating that an open bracket has been encountered.
-
-Handling Closing Brackets: If the current character is a closing bracket (')', ']', or '}'), the algorithm checks if the stack is not empty (indicating there was a matching open bracket). It also checks if the top of the stack corresponds to the expected open bracket for the current closing bracket. If the conditions are met, the top element (matching open bracket) is popped from the stack.
-
-Checking Validity: If any of the conditions for a valid string of parentheses are violated (e.g., mismatched brackets or a closing bracket without a corresponding open bracket), the algorithm immediately returns false, indicating an invalid string.
-
-Final Check: After iterating through the input string, the algorithm checks if the stack is empty. If the stack is empty, it means all open brackets have been successfully closed, and the input string is valid. If the stack is not empty, it means there are unmatched open brackets, and the input string is invalid.
-
-Return Result: The algorithm returns true if the stack is empty (indicating a valid string of parentheses) and false otherwise (indicating an invalid string).
-
 Time Complexity Analysis
-The time complexity of the solution is O(n), where n is the length of the input string s. The for loop iterates through each character in the input string, taking O(n) time. Inside the loop, each operation (push, pop, and top) on the stack takes O(1) time.
+The time complexity of the solution is O(n), where n is the length of the input string s. 
 
 Space Complexity Analysis
-The space complexity of the solution is O(n), where n is the length of the input string s. The space used by the stack is proportional to the number of open brackets in the input string. In the worst case, if all characters in the input string are open brackets, the stack could contain all of them, resulting in O(n) space usage.
+The space complexity of the solution is O(n), where n is the length of the input string s.
 
 This algorithm efficiently validates the input string for valid parentheses using a stack-based approach, ensuring adherence to the specified rules for valid parentheses.
 
@@ -162,7 +148,7 @@ Output
 6
 Explanation
 The subarray [4,-1,2,1] has the largest sum, which is 6.
-Constraints
+### Constraints
 1 <= nums.length <= 105
 -104 <= nums[i] <= 104
 
@@ -178,10 +164,31 @@ Update the maximum subarray sum by choosing the maximum between the previous max
 Return the maximum subarray sum.
 
 Time Complexity
-The time complexity of this solution is O(n), where n is the size of the input vector nums. This is because the function iterates through the input vector once, performing a constant number of operations for each element.
-
+The time complexity of this solution is O(n), where n is the size of the input vector nums.
 Space Complexity
-The space complexity is O(1), indicating constant space usage. The function uses only a few integer variables (currSubArr_sum and maxSubArr_sum) to keep track of the current and maximum subarray sums. The space used is independent of the input size and remains constant.
+The space complexity is O(1), indicating constant space usage.
+
+## Product of Array Except Self
+### Problem Statement
+Given an array of integers, return a new array such that each element at index i of the new array is the product of all the numbers in the original array except the one at i.
+
+### Example
+Input: [1, 2, 3, 4]
+Output: [24, 12, 8, 6]
+Explanation: The output is calculated as follows:
+
+output[0] = 2 * 3 * 4 = 24
+output[1] = 1 * 3 * 4 = 12
+output[2] = 1 * 2 * 4 = 8
+output[3] = 1 * 2 * 3 = 6
+
+### Constraints
+The length of the given array is at least 2.
+The length of the given array is at most 1000.
+Elements in the given array are within the range [-10^4, 10^4].
+
+### Solution
+The algorithm can be implemented using two passes through the input array. The first pass calculates the product of all elements to the left of each element, and the second pass calculates the product of all elements to the right of each element. The final result is the product of the left and right products for each element. The time complexity of this algorithm is O(N) and the space complexity is O(1) excluding the output array, or O(N) including the output array.
 
 
 
