@@ -63,5 +63,15 @@ public:
 
 
 /*
+Time Complexity Analysis
+The time complexity of this function is O(N), where N is the number of elements in the input vector nums. This is because there are two passes through the input vector: one from left to right and one from right to left. Both passes iterate through the input vector once, performing constant-time operations for each element.
 
+Space Complexity Analysis
+The space complexity of this function is O(1) excluding the output vector, and O(N) considering the output vector.
+
+Excluding the output vector: The function uses a constant amount of extra space for variables (int post_prod and loop variables) and does not scale with the input size, so it's O(1).
+
+Including the output vector: The function creates an output vector of size N to store the result, where N is the size of the input vector nums. Therefore, the space complexity due to the output vector is O(N).
+
+In summary, the space complexity is O(1) (excluding the output vector) or O(N) (including the output vector).
 */
