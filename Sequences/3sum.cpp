@@ -99,5 +99,25 @@ public:
 };
 
 /*
+Time Complexity Analysis
+Sorting: The sort function used to sort the input vector takes O(n log n) time complexity.
 
+Nested Loops:
+
+The outer loop iterates through each element in the input vector, which takes O(n) time, where n is the size of the input vector.
+The inner while loop has two pointers (j and k) that move towards each other, and in the worst case, they can traverse the entire array, which also takes O(n) time.
+HashSet Insertion:
+
+The insertion of triplets into the set (set_of_vec.insert) inside the nested loop takes constant time on average, which can be approximated as O(1) assuming a good hash function and negligible collisions.
+Overall, the dominant factor in the time complexity is the sorting operation, so the overall time complexity is O(n log n) due to the sorting.
+
+Space Complexity Analysis
+Input and Output Space:
+
+The input vector nums is used as a parameter and does not contribute to additional space complexity.
+The output vector of vectors output stores the final result and can have a maximum of O(n^2) triplets, so its space complexity is O(n^2).
+HashSet (set_of_vec):
+
+The space used by the set to store the unique triplets can be at most O(n^2) in the worst case, considering the maximum number of unique triplets.
+The overall space complexity is dominated by the space used for the output vector and the set, so it is O(n^2) due to the potential O(n^2) triplets and the space required for the set to store them.
 */
