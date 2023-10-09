@@ -44,7 +44,59 @@ Constraints:
 3 <= nums.length <= 3000
 -105 <= nums[i] <= 105
 */
+class Solution {
+public:
+    // Define a class named Solution with public access
+    vector<vector<int>> threeSum(vector<int>& nums) {
+        // Define a function threeSum that takes a vector of integers as a parameter and returns a vector of vectors of integers
 
+        // Sort the input vector in ascending order
+        sort(nums.begin(),nums.end());
+
+        // Use a set to store unique triplets
+        set<vector<int>> set_of_vec;
+
+        // Vector of vectors to store the output triplets
+        vector<vector<int>> output;
+
+        // Iterate over all elements of the input vector
+        for(int i = 0; i < nums.size(); i++) {
+            // Iterate over the elements to the right of i
+            int j = i + 1;
+
+            // Iterate from the end of the array
+            int k = nums.size() - 1;
+
+            // Exit the loop when j is less than k
+            while(j < k) {
+                // Calculate the sum of elements at positions i, j, and k
+                int sum = nums[i] + nums[j] + nums[k];
+
+                // If the sum is zero, store the triplet in the set
+                if (sum == 0) {
+                    set_of_vec.insert({nums[i], nums[j], nums[k]});
+                    j++;  // Increment j
+                    k--;  // Decrement k
+                }
+                else if (sum < 0) {
+                    j++;  // Increment j
+                }
+                else {
+                    k--;  // Decrement k
+                }
+            }
+        }
+
+        // Iterate over the set of triplets using a ranged-based for loop
+        for(auto trip : set_of_vec) {
+            // Save the triplets in the output vector of vectors
+            output.push_back(trip);
+        }
+
+        // Return the vector of triplets
+        return output;
+    }
+};
 
 /*
 
