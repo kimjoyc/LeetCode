@@ -191,4 +191,64 @@ Elements in the given array are within the range [-10^4, 10^4].
 The algorithm can be implemented using two passes through the input array. The first pass calculates the product of all elements to the left of each element, and the second pass calculates the product of all elements to the right of each element. The final result is the product of the left and right products for each element. The time complexity of this algorithm is O(N) and the space complexity is O(1) excluding the output array, or O(N) including the output array.
 
 
+## 3Sum
 
+### Problem Statement
+Given an integer array `nums`, return all the triplets `[nums[i], nums[j], nums[k]]` such that `i != j`, `i != k`, and `j != k`, and `nums[i] + nums[j] + nums[k] == 0`.
+
+Notice that the solution set must not contain duplicate triplets.
+
+### Examples
+
+Example 1:
+Input: nums = [-1,0,1,2,-1,-4]
+Output: [[-1,-1,2],[-1,0,1]]
+Explanation:
+- nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.
+- nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.
+- nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.
+The distinct triplets are [-1,0,1] and [-1,-1,2].
+Notice that the order of the output and the order of the triplets does not matter.
+
+Example 2:
+Input: nums = [0,1,1]
+Output: []
+Explanation: The only possible triplet does not sum up to 0.
+
+Example 3:
+Input: nums = [0,0,0]
+Output: [[0,0,0]]
+Explanation: The only possible triplet sums up to 0.
+
+### Constraints
+- 3 <= nums.length <= 3000
+- -10^5 <= nums[i] <= 10^5
+
+## Solution
+Sort the Array
+
+Sort the input array to simplify finding triplets that sum to zero.
+Iterate and Use Two Pointers
+
+Iterate through the sorted array, considering each element as a potential first element of the triplet.
+Use two pointers technique (left and right) for the remaining elements.
+Find Triplets
+
+Adjust pointers based on the sum of the triplet, aiming for a sum of zero.
+Collect unique triplets that satisfy the condition.
+Avoid Duplicate Triplets
+
+Use a set to automatically handle and avoid duplicate triplets.
+Return the Result
+
+Convert the set of unique triplets to a vector for returning the result.
+Complexity Analysis
+Time Complexity:
+
+Sorting: O(n log n)
+Iteration and pointer manipulation: O(n)
+Overall time complexity: O(n log n) due to sorting.
+Space Complexity:
+
+Output vector and set: O(n^2)
+Overall space complexity: O(n^2) due to the potential O(n^2) triplets and the set to store them.
