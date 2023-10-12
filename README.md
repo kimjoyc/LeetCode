@@ -252,3 +252,46 @@ Space Complexity:
 
 Output vector and set: O(n^2)
 Overall space complexity: O(n^2) due to the potential O(n^2) triplets and the set to store them.
+
+
+## Merge Intervals
+### Problem Statement
+You are given a list of intervals, where each interval is represented by a pair of integers [start, end]. Your task is to merge overlapping intervals and return a list of non-overlapping intervals.
+
+### Examples
+Input:
+intervals = [[1,3],[2,6],[8,10],[15,18]]
+Output:
+[[1,6],[8,10],[15,18]]
+Explanation:
+Interval [1,3] and [2,6] overlap and are merged into [1,6].
+Intervals [8,10] and [15,18] are non-overlapping and remain as separate intervals.
+Input:
+intervals = [[1,4],[4,5]]
+Output:
+[[1,5]]
+Explanation:
+Interval [1,4] and [4,5] overlap and are merged into [1,5].
+### Constraints
+The input intervals are non-empty.
+Each interval is represented by a pair of integers [start, end] where start < end.
+### Solution
+The solution to this problem involves sorting the intervals based on their start times and then iterating through the sorted intervals to merge overlapping ones.
+
+#### Approach
+Sort the intervals: Sort the intervals based on their start times to ensure that overlapping intervals are adjacent.
+
+Merge Intervals: Iterate through the sorted intervals. For each interval:
+
+If the start of the current interval is less than or equal to the end of the last merged interval, update the end of the last merged interval if needed.
+If not, add the current interval as a new merged interval.
+Return Merged Intervals: Return the merged intervals as the final result.
+
+Time Complexity
+Sorting the intervals: O(n log n)
+Merging the intervals: O(n)
+The overall time complexity is O(n log n) due to the sorting step.
+
+Space Complexity
+Space for the output vector: O(n)
+The overall space complexity is O(n) due to the output vector storing the merged intervals.
