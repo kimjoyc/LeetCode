@@ -63,5 +63,15 @@ public:
 
 
 /*
+Time Complexity:
+Sorting of Intervals: The initial step involves sorting the intervals based on their start times, which has a time complexity of O(n log n), where n is the number of intervals.
 
+Merging Intervals: The merging step involves iterating through the sorted intervals once and either updating the end time of the last merged interval or adding a new merged interval. This is a linear-time operation, taking O(n) time.
+
+Hence, the overall time complexity is O(n log n) due to the sorting step.
+
+Space Complexity:
+The space complexity is primarily determined by the space used for storing the merged intervals in the output vector. In the worst case, where no intervals can be merged, the output vector will have the same size as the input vector of intervals, resulting in O(n) space complexity.
+
+Therefore, the space complexity is O(n), where n is the number of intervals.
 */
