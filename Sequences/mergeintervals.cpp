@@ -26,6 +26,40 @@ intervals[i].length == 2
 0 <= starti <= endi <= 104
 
 */
+class Solution {
+public:
+    vector<vector<int>> merge(vector<vector<int>>& intervals) {
+
+        // Sort the intervals based on the first element in each pair
+        sort(intervals.begin(), intervals.end());
+
+        // Initialize the output variable to store merged intervals
+        vector<vector<int>> output;
+        output.push_back(intervals[0]); // Add the first interval to the output
+
+        // Iterate through all intervals
+        for (int i = 1; i < intervals.size(); i++) {
+
+            // Reference to the most recent interval added to the output
+            vector<int> &recent_end_vec = output.back();
+
+            // Get the end value of the most recent interval
+            int recent_end = recent_end_vec[1];
+
+            // Check if the start of the current interval is less than or equal to the end value of the most recent interval
+            if (intervals[i][0] <= recent_end) {
+                // Update the end value of the most recent interval if needed
+                recent_end_vec[1] = max(recent_end, intervals[i][1]);
+            } else {
+                // If the current interval doesn't overlap, add it to the output
+                output.push_back(intervals[i]);
+            }
+        }
+
+        // Return the merged intervals
+        return output;
+    }
+};
 
 
 /*
