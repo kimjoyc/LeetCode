@@ -24,5 +24,13 @@ the total distance you will travel on scooters.
 Note: You are not expected to provide the most optimal solution, but a solution with a time complexity not worse than O(scooters.length*finish) will fit in the execution time limit.
 
 
-Example: 
+Example:
+
+For finish = 23 and scooters = [7, 4, 14] the output should be solution(finish, scooters) = 19. 
+
+Starting at 0, you find the nearest scooter at point scooters[1]=4, and use all of its resource to get to point 14.
+
+There is another scooter at 14 (scooters[2]=14) which you use to get to end point finish = 23.
+
+Therefore you traveled 10 points on scooter 1 and 9 points on scooter 2, which sums to 10+9=19 points in total.
 */
