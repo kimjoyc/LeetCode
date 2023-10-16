@@ -19,5 +19,10 @@ To get to the end point of the street, you must use the following algorithm:
 3. If you still haven't reached the end point, repeat the process from step 1.
 
 Given that you must use the algorithm described above to travel from starting point of the street 0 to the end of the point street finish, your task is to return
+the total distance you will travel on scooters.
 
+Note: You are not expected to provide the most optimal solution, but a solution with a time complexity not worse than O(scooters.length*finish) will fit in the execution time limit.
+
+
+Example: 
 */
