@@ -28,22 +28,26 @@ When i = 2 the triple (numbers[2], numbers[3], numberes[4]) = (94, 4, 51) contai
 
 */
 
-int solution(vector<int> numbers, threshold) 
+int solution(vector<int> numbers, int threshold) 
 {
   //triplet index variable to store array size divisible by 3 to the nearest whole number
   int triplets_index = numbers.size()/3;
-
   //for loop iterating through all possible triplet combinations
   int index;
   for(int i = 0; i<= triplets_index; i++)
-    {
+  {
       if(numbers[i] > threshold && numbers[i+1] > threshold && numbers[i+2] > threshold)
       {
-        return index = i;
+          index = i;
       }
       
-      return index = -1;
-    }
+      else
+      {
+         index = -1;
+      }
+      
+  }
+    return index;
 }
 
 int main()
