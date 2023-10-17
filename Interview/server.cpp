@@ -29,5 +29,21 @@ At each step , if server k is up and hasn't reached workinit number of requests,
 
 Notes:
 
-When some server k
+When some server k is under maintenance, it should be bypassed during handling requests.
+
+Bypassing the request to the next server takes 0 seconds.
+
+It is guauranteed that there is at least once functioning server to handle request.
+
+It is guaranteed that there is at least one "REQUEST" event.
+
+Return server index that has served the most or the requests in case of a tie return the largest server index.
+
+Note: Solution time complexity should not be more than O(nServers*events.length)
+
+Example:
+For nServers = 4, workinit = 1, recoveryTime = 3
+
+and events = [
+"REQUEST",
 */
