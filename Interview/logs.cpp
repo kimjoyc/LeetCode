@@ -63,3 +63,76 @@ An array of integers representing profits from each sell transaction in logs.
 
 [C++] Syntax Tips
 */
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+#include <algorithm>
+
+using namespace std;
+
+vector<int> solution(vector<vector<string>>& logs) {
+    unordered_map<string, vector<pair<int, int>>> inventory; // item_name -> {price, count}
+    vector<int> revenue;
+
+    for (const auto& log : logs) {
+        const string& type = log[0];
+        const string& itemName = log[1];
+
+        if (type == "supply") {
+            int count = stoi(log[2]);
+            int price = stoi(log[3]);
+            inventory[itemName].emplace_back(price, count);
+        } else if (type == "sell") {
+            int count = stoi(log[2]);
+            int totalRevenue = 0;
+
+            while (count > 0 && inventory[itemName].size() > 0) {
+                auto& cheapestItem = *min_element(inventory[itemName].begin(), inventory[itemName].end());
+                int price = cheapestItem.first;
+                int availableCount = cheapestItem.second;
+
+                int soldCount = min(count, availableCount);
+                totalRevenue += soldCount * price;
+                count -= soldCount;
+                cheapestItem.second -= soldCount;
+
+                if (cheapestItem.second == 0) {
+                    inventory[itemName].erase(inventory[itemName].begin());
+                }
+            }
+
+            revenue.push_back(totalRevenue);
+        } else if (type == "return") {
+            int count = stoi(log[2]);
+            int sellPrice = stoi(log[3]);
+            int newPrice = stoi(log[4]);
+
+            inventory[itemName].emplace_back(newPrice, count);
+        }
+    }
+
+    return revenue;
+}
+
+int main() {
+    vector<vector<string>> logs = {
+        {"supply", "item1", "2", "100"},
+        {"supply", "item2", "3", "60"},
+        {"sell", "item1", "1"},
+        {"sell", "item1", "1"},
+        {"sell", "item2", "2"},
+        {"return", "item2", "1", "60", "40"},
+        {"sell", "item2", "1"},
+        {"sell", "item2", "1"}
+    };
+
+    vector<int> result = solution(logs);
+
+    cout << "Revenue from each sell transaction:" << endl;
+    for (int i : result) {
+        cout << i << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
