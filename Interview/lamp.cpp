@@ -14,4 +14,12 @@ Your task is to find the number of integer coordinates that are illuminated exac
 
 
 Example: 
+For lamps = [[-2,3],[2,3],[2,1]], the output should be solution(lamps)=6.
+
+The first lamp illuminates everything in range of [-2-3,-2+3] = [-5,1]
+
+The second lamp illuminates everything in range of [2-3,2+3] = [-1,5]
+
+The third lamp illuminates everything in range of [2-1, 2+1] = [1,3]
+
 */
