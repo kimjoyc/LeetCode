@@ -22,4 +22,7 @@ The second lamp illuminates everything in range of [2-3,2+3] = [-1,5]
 
 The third lamp illuminates everything in range of [2-1, 2+1] = [1,3]
 
+The points that are illuminated exactly by 1 lamp are [-5, -4, -3, -2, 4, 5]  hence answer = 6.
+
+
 */
