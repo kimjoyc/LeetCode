@@ -52,7 +52,7 @@ int solution(vector<int> numbers, int threshold)
 
 int main()
 {
-  vector<int> test1_arr = {1,2,3,4};
+  vector<int> test1_arr = {0,1,4,3,2,5};
   int test1_thresh = 1;
   solution(test1_arr,test1_thresh);
   
