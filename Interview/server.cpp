@@ -47,3 +47,8 @@ For nServers = 4, workinit = 1, recoveryTime = 3
 and events = [
 "REQUEST",
 */
+
+solution(nServers, workinit, recoveryTime, events)
+{
+  
+}
