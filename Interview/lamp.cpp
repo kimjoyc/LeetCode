@@ -37,9 +37,18 @@ The points illuminated by exactly 1 lamp are [-3,-2,-1,1,2,3] answer =6.
 
 int solution(vector<vector<int>> lamps)
 {
+  vector<vector<int>> range_pairs;
   for(int i = 0; i < lamps.size(); i++)
     {
-      lamps[i][0]-lamps[i][1]
+      int first_pair = lamps[i][0]-lamps[i][1];
+      int second_pair = lamps[i][0]+lamps[i][1];
+      vector<int> pairs = {first_pair, second_pair};      
+      range_pairs.push_back(pairs);
+    }
+
+  for(int i = 0; i < range_pairs.size(); i++)
+    {
+      
     }
 }
 
