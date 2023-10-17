@@ -34,12 +34,7 @@ There is another scooter at 14 (scooters[2]=14) which you use to get to end poin
 
 Therefore you traveled 10 points on scooter 1 and 9 points on scooter 2, which sums to 10+9=19 points in total.
 */
-#include <iostream>
-#include <limits.h>
-#include <vector>
-#include <bits/stdc++.h> 
 
-using namespace std;
 
 
 int solution(int finish, vector<int>scooters)
@@ -51,20 +46,22 @@ int solution(int finish, vector<int>scooters)
         if(scooters[i]<=min_dist+10)
         {
             next_scooter = scooters[i];
-
         }
         
         next_scooter = scooters[i];
+        
     }
-    
     
     finish-=min_dist+10;
     
-    if(finish>=10)
+    if(finish >= 10)
     {
-        return finish=10; 
+        return finish= 10*2;
     }
-    return next_scooter;
+    
+ 
+    
+    return finish+10;
 
 }
 
@@ -73,6 +70,11 @@ int main()
     vector<int> test_scooters = {15,7,3,10};
     int test_finish=27;
     cout<<solution(test_finish,test_scooters);
+    
+    vector<int> test_scooters2 = {7,4,14};
+    int test_finish2=23;
+    cout<<solution(test_finish2,test_scooters2);
 
     return 0;
 }
+
