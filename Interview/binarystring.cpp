@@ -57,3 +57,56 @@ string helloWorld(string name) {
 }
 
 */
+#include <iostream>
+#include <vector>
+#include <string>
+
+int countZeros(const std::string& binaryString, int index) {
+    int count = 0;
+    for (int i = 0; i <= index; ++i) {
+        if (binaryString[i] == '0') {
+            count++;
+        }
+    }
+    return count;
+}
+
+void flipBinaryString(std::string& binaryString) {
+    for (char& c : binaryString) {
+        if (c == '0') {
+            c = '1';
+        } else {
+            c = '0';
+        }
+    }
+}
+
+std::vector<int> solution(const std::string& binaryString, const std::vector<std::string>& requests) {
+    std::vector<int> answers;
+
+    for (const std::string& request : requests) {
+        if (request.find("count:") != std::string::npos) {
+            int index = std::stoi(request.substr(6));
+            int count = countZeros(binaryString, index);
+            answers.push_back(count);
+        } else if (request == "flip") {
+            flipBinaryString(const_cast<std::string&>(binaryString));
+        }
+    }
+
+    return answers;
+}
+
+int main() {
+    std::string binaryString = "1111010";
+    std::vector<std::string> requests = {"count:4", "count:6", "flip", "count:4", "flip", "count:2"};
+    std::vector<int> answers = solution(binaryString, requests);
+
+    std::cout << "Answers:";
+    for (int answer : answers) {
+        std::cout << " " << answer;
+    }
+    std::cout << std::endl;
+
+    return 0;
+}
