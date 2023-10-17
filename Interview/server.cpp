@@ -46,6 +46,16 @@ For nServers = 4, workinit = 1, recoveryTime = 3
 
 and events = [
 "REQUEST",
+"REQUEST",
+"UP 1"
+"REQUEST",
+"REQUEST",
+"REQUEST",
+"REQUEST"
+]
+
+
+
 */
 
 solution(nServers, workinit, recoveryTime, events)
