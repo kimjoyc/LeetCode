@@ -27,4 +27,4 @@ The points that are illuminated exactly by 1 lamp are [-5, -4, -3, -2, 4, 5]  he
 
 */
 
-solution(lamps)
+int solution(vector<vector<int>> lamps)
