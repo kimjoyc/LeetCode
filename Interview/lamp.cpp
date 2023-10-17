@@ -25,6 +25,14 @@ The third lamp illuminates everything in range of [2-1, 2+1] = [1,3]
 The points that are illuminated exactly by 1 lamp are [-5, -4, -3, -2, 4, 5]  hence answer = 6.
 
 
+For lamps = [[-2,1],[2,1]] output should be solution(lamps)=6
+
+The first lamp illuminates [-2-1,-2+1] = [-3,-1]
+
+The second lamp illuminates [2-1,2+1]= [1,3]
+
+The points illuminated by exactly 1 lamp are [-3,-2,-1,1,2,3] answer =6.
+
 */
 
 int solution(vector<vector<int>> lamps)
