@@ -58,7 +58,7 @@ and events = [
 
 */
 
-solution(nServers, workinit, recoveryTime, events)
+int solution(int nServers, int workinit, int recoveryTime, vector<strings> events)
 {
   
 }
