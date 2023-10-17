@@ -35,20 +35,40 @@ The points illuminated by exactly 1 lamp are [-3,-2,-1,1,2,3] answer =6.
 
 */
 
-int solution(vector<vector<int>> lamps)
-{
-  vector<vector<int>> range_pairs;
-  for(int i = 0; i < lamps.size(); i++)
-    {
-      int first_pair = lamps[i][0]-lamps[i][1];
-      int second_pair = lamps[i][0]+lamps[i][1];
-      vector<int> pairs = {first_pair, second_pair};      
-      range_pairs.push_back(pairs);
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+
+int solution(const std::vector<std::vector<int>>& lamps) {
+    std::unordered_map<int, int> countMap;
+
+    for (const auto& lamp : lamps) {
+        int start = lamp[0] - lamp[1];
+        int end = lamp[0] + lamp[1];
+
+        for (int i = start; i <= end; ++i) {
+            countMap[i]++;
+        }
     }
 
-  for(int i = 0; i < range_pairs.size(); i++)
-    {
-      
+    int illuminatedCount = 0;
+    for (const auto& entry : countMap) {
+        if (entry.second == 1) {
+            illuminatedCount++;
+        }
     }
+
+    return illuminatedCount;
+}
+
+int main() {
+    // Example usage
+    std::vector<std::vector<int>> lamps1 = {{-2, 3}, {2, 3}, {2, 1}};
+    std::cout << "Example 1: " << solution(lamps1) << std::endl; // Output: 6
+
+    std::vector<std::vector<int>> lamps2 = {{-2, 1}, {2, 1}};
+    std::cout << "Example 2: " << solution(lamps2) << std::endl; // Output: 6
+
+    return 0;
 }
 
