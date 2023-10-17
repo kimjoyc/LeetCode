@@ -58,7 +58,68 @@ and events = [
 
 */
 
-int solution(int nServers, int workinit, int recoveryTime, vector<strings> events)
-{
-  
+int solution(int nServers, int workinit, int recoveryTime, vector<string> events) {
+    vector<int> servers(nServers, 0);  // Initialize servers with handled requests count
+    int maxRequests = 0;  // Maximum requests served by a server
+    int maxServerIndex = 0;  // Server index with the maximum requests
+
+    for (string event : events) {
+        if (event == "REQUEST") {
+            int currentServer = maxServerIndex;
+            int minRequests = servers[maxServerIndex];
+
+            // Find the next available server to handle the request
+            for (int i = 0; i < nServers; i++) {
+                int serverIndex = (currentServer + i) % nServers;
+
+                if (servers[serverIndex] < workinit) {
+                    currentServer = serverIndex;
+                    break;
+                }
+
+                if (servers[serverIndex] < minRequests) {
+                    minRequests = servers[serverIndex];
+                    currentServer = serverIndex;
+                }
+            }
+
+            // Handle the request
+            servers[currentServer]++;
+            
+            // Update maximum requests served so far
+            if (servers[currentServer] > maxRequests) {
+                maxRequests = servers[currentServer];
+                maxServerIndex = currentServer;
+            }
+        } else if (event.substr(0, 2) == "UP") {
+            // Extract the server index from the event
+            int serverIndex = stoi(event.substr(3));
+            
+            // Restart the server (reset handled requests count)
+            servers[serverIndex - 1] = 0;
+        }
+    }
+
+    return maxServerIndex + 1;  // Return the server index (1-indexed)
+}
+
+int main() {
+    int nServers = 4;
+    int workinit = 1;
+    int recoveryTime = 3;
+
+    vector<string> events = {
+        "REQUEST",
+        "REQUEST",
+        "UP 1",
+        "REQUEST",
+        "REQUEST",
+        "REQUEST",
+        "REQUEST"
+    };
+
+    int result = solution(nServers, workinit, recoveryTime, events);
+    cout << "Server index with the most requests: " << result << endl;
+
+    return 0;
 }
