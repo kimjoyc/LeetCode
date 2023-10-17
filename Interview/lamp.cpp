@@ -62,12 +62,12 @@ int solution(const std::vector<std::vector<int>>& lamps) {
 }
 
 int main() {
-    // Example usage
+    // Test usage
     std::vector<std::vector<int>> lamps1 = {{-2, 3}, {2, 3}, {2, 1}};
-    std::cout << "Example 1: " << solution(lamps1) << std::endl; // Output: 6
+    std::cout << "Test 1: " << solution(lamps1) << std::endl; // Output: 6
 
     std::vector<std::vector<int>> lamps2 = {{-2, 1}, {2, 1}};
-    std::cout << "Example 2: " << solution(lamps2) << std::endl; // Output: 6
+    std::cout << "Test 2: " << solution(lamps2) << std::endl; // Output: 6
 
     return 0;
 }
