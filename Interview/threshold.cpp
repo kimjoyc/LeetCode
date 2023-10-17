@@ -54,6 +54,8 @@ int main()
 {
   vector<int> test1_arr = {0,1,4,3,2,5};
   int test1_thresh = 1;
-  solution(test1_arr,test1_thresh);
+  cout << solution(test1_arr,test1_thresh);
+  
+  
   
 }
