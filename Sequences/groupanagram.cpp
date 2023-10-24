@@ -51,19 +51,19 @@ class Solution {
 public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
         // Create a hash map to store groups of anagrams
-        std::unordered_map<std::string, std::vector<std::string>> anagramGroups;
+        unordered_map<string, vector<string>> anagramGroups;
         
-        for (const std::string& str : strs) {
+        for (const string& str : strs) {
             // Sort the characters of the string to use as a key
-            std::string sortedStr = str;
-            std::sort(sortedStr.begin(), sortedStr.end());
+            string sortedStr = str;
+            sort(sortedStr.begin(), sortedStr.end());
             
             // Add the original string to the corresponding group
             anagramGroups[sortedStr].push_back(str);
         }
         
         // Transform the hash map into the required output format
-        std::vector<std::vector<std::string>> result;
+        vector<vector<string>> result;
         for (const auto& pair : anagramGroups) {
             result.push_back(pair.second);
         }
