@@ -293,3 +293,30 @@ Space Complexity
 Space for the output vector: O(n)
 The overall space complexity is O(n) due to the output vector storing the merged intervals.
 
+
+
+##  Maximum Product Subarray
+### Problem Statement
+You are given an integer array nums, and your task is to find a subarray within it that has the largest product, and return the value of that product. The test cases are designed in such a way that the answer will always fit within a 32-bit integer.
+
+### Example
+Input:
+nums = [2, 3, -2, 4]
+Output:
+6
+Explanation: The subarray [2, 3] has the largest product, which is 6.
+
+### Constraints
+The length of the nums array is between 1 and 20,000 (1 <= nums.length <= 2 * 10^4).
+The elements in the nums array are integers between -10 and 10 (-10 <= nums[i] <= 10).
+The product of any prefix or suffix of nums is guaranteed to fit within a 32-bit integer.
+### Solution
+The solution to this problem can be efficiently solved by maintaining two variables to keep track of the maximum and minimum subarray products ending at the current element. This is because multiplying a large negative number by the current element can result in a large positive number and vice versa.
+
+The key idea is to consider both the maximum and minimum subarray products because a minimum product can become the maximum if multiplied by a negative number.
+
+Time Complexity
+The solution has a time complexity of O(n), where 'n' is the number of elements in the input vector. It performs a single pass through the array.
+
+Space Complexity
+The solution uses a constant amount of extra space, regardless of the input size. It maintains only a few variables, resulting in a space complexity of O(1), indicating constant space usage.
