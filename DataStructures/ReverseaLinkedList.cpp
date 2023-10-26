@@ -34,7 +34,24 @@ Follow up: A linked list can be reversed either iteratively or recursively. Coul
 
 */
 
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        ListNode* prev = nullptr; // Initialize a pointer to the previous node as null.
+        ListNode* current = head; // Initialize a pointer to the current node as the head of the list.
 
+        while (current) { // Start a loop to iterate through the list until current becomes null (end of the list).
+            ListNode* next_node = current->next; // Store the next node in the original list.
+
+            current->next = prev; // Reverse the link by pointing the current node to the previous node.
+
+            prev = current; // Move prev to the current node.
+            current = next_node; // Move current to the next node in the original list.
+        }
+
+        return prev; // Return the new head, which is now the last node in the original list (reversed list).
+    }
+};
 /*
 
 */
