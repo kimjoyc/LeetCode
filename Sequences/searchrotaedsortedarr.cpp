@@ -35,7 +35,65 @@ All values of nums are unique.
 nums is an ascending array that is possibly rotated.
 -104 <= target <= 104
 */
+class Solution {
+public:
+    // Define a class named "Solution."
 
+    int search(vector<int>& nums, int target) {
+        // Define a member function named "search" that takes a reference to a vector of integers and an integer as input.
+
+        int left = 0;
+        // Initialize an integer variable "left" with the value 0.
+        int right = nums.size() - 1;
+        // Initialize an integer variable "right" with the index of the last element in the vector "nums."
+
+        while (left <= right) {
+            // Start a while loop that continues as long as the "left" index is less than or equal to the "right" index.
+
+            int mid = (left + right) / 2;
+            // Calculate the middle index by averaging the "left" and "right" indices.
+
+            if (nums[mid] == target) {
+                // Check if the value at the middle index of the vector "nums" is equal to the target value.
+
+                return mid;
+                // If the target value is found at the middle index, return the middle index.
+
+            }
+
+            if (nums[left] <= nums[mid]) {
+                // Check if the left subarray is sorted or rotated, meaning that the element at the "left" index is less than or equal to the element at the "mid" index.
+
+                if (nums[left] <= target && target < nums[mid]) {
+                    // Check if the target value is within the range of the left subarray.
+
+                    right = mid - 1;
+                    // Update the "right" index to search in the left subarray.
+
+                } else {
+                    left = mid + 1;
+                    // Update the "left" index to search in the right subarray.
+                }
+            } else {
+                // If the left subarray is not sorted, it means the right subarray is sorted or rotated.
+
+                if (nums[mid] < target && target <= nums[right]) {
+                    // Check if the target value is within the range of the right subarray.
+
+                    left = mid + 1;
+                    // Update the "left" index to search in the right subarray.
+
+                } else {
+                    right = mid - 1;
+                    // Update the "right" index to search in the left subarray.
+                }
+            }
+        }
+
+        return -1;
+        // If the target value is not found in the vector "nums," return -1.
+    }
+};
 
 /*
 
