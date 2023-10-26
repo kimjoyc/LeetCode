@@ -96,5 +96,21 @@ public:
 };
 
 /*
+Time Complexity:
 
+The code uses a modified binary search algorithm to find a target element in a rotated sorted array. The time complexity is O(log N), where N is the number of elements in the input vector nums.
+
+In each iteration of the while loop, the search space is effectively reduced in half by adjusting the left and right indices.
+The algorithm continues until the search space has been reduced to a single element or the target is found, making it a logarithmic time complexity.
+Space Complexity:
+
+The space complexity of the code is O(1), which means it uses a constant amount of additional memory regardless of the input size. Here's why:
+
+The code only uses a few integer variables (left, right, mid) and a constant number of temporary variables. These variables do not depend on the input size and occupy a constant amount of memory.
+
+The vector nums is passed by reference, so there is no additional memory allocated for a copy of the vector. The vector itself is not modified.
+
+The code does not use any data structures or recursion that would result in additional memory usage proportional to the input size.
+
+In summary, the space complexity is O(1) because the code uses a fixed, constant amount of memory regardless of the size of the input vector.
 */
