@@ -53,5 +53,8 @@ public:
     }
 };
 /*
+Iterative Approach:
 
+Time Complexity: O(n) where n is the number of nodes in the linked list. This is because the algorithm iterates through the entire list once.
+Space Complexity: O(1) because the algorithm uses a constant amount of extra space for the prev, current, and next_node pointers, regardless of the size of the input linked list.
 */
