@@ -320,3 +320,55 @@ The solution has a time complexity of O(n), where 'n' is the number of elements 
 
 Space Complexity
 The solution uses a constant amount of extra space, regardless of the input size. It maintains only a few variables, resulting in a space complexity of O(1), indicating constant space usage.
+
+
+## Search in Rotated Sorted Array	
+
+
+### Problem Statement
+You are given an integer array nums sorted in ascending order with distinct values. However, prior to being passed to your function, nums may have been rotated at an unknown pivot index k (where 1 <= k < nums.length). This rotation shifts the array elements, creating a new sequence as follows:
+
+[nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]]
+Here, n represents the number of elements in the array, and the indices are 0-indexed. For example, the original array [0,1,2,4,5,6,7] might be rotated at pivot index 3 to become [4,5,6,7,0,1,2].
+
+Given the rotated array nums and an integer target, your task is to write an algorithm to return the index of target within nums, or -1 if target is not found.
+
+Your algorithm must have a runtime complexity of O(log n).
+
+### Example
+Input:
+nums = [4,5,6,7,0,1,2]
+target = 0
+Output:
+4
+Input:
+nums = [4,5,6,7,0,1,2]
+target = 3
+Output:
+-1
+Input:
+nums = [1]
+target = 0
+Output:
+-1
+
+### Constraints
+1 <= nums.length <= 5000
+-104 <= nums[i] <= 104
+All values in nums are unique.
+nums is an ascending array that may be rotated.
+-104 <= target <= 104
+
+
+### Solution
+The provided solution is implemented in C++ and uses a modified binary search algorithm to efficiently locate the target element within the rotated sorted array. It continuously reduces the search space in each iteration, ensuring a time complexity of O(log n).
+
+The algorithm checks whether the left or right subarray is sorted (or rotated) and decides which subarray to search based on the target value. This approach guarantees a time complexity of O(log N).
+
+Time Complexity
+The time complexity of this solution is O(log N), where N is the number of elements in the input vector nums. This is because the search space is effectively halved in each iteration of the binary search algorithm.
+
+Space Complexity
+The space complexity of this solution is O(1), indicating that it uses a constant amount of additional memory, regardless of the input size. The algorithm only uses a few integer variables and does not create any data structures or copies of the input vector.
+
+In summary, this solution efficiently finds the target element in a rotated sorted array while using minimal memory resources.
