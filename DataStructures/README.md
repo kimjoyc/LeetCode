@@ -42,3 +42,63 @@ The time complexity of this iterative solution is O(n), where 'n' is the number 
 Space Complexity:
 
 The space complexity is O(1), meaning the algorithm uses a constant amount of extra space. This space is used for the prev, current, and next_node pointers, and it doesn't depend on the size of the input linked list.
+
+## Detect Cycle in a Linked List	
+
+### Problem Statement
+Given head, the head of a linked list, determine if the linked list has a cycle in it.
+
+There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer. Internally, pos is used to denote the index of the node that tail's next pointer is connected to. Note that pos is not passed as a parameter.
+
+Return true if there is a cycle in the linked list. Otherwise, return false.
+
+### Examples
+Example 1:
+Input:
+head = [3,2,0,-4], pos = 1
+Output:
+true
+Explanation:
+There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).
+
+Example 2:
+Input:
+
+head = [1,2], pos = 0
+Output:
+
+true
+Explanation:
+
+There is a cycle in the linked list, where the tail connects to the 0th node.
+
+Example 3:
+Input:
+
+head = [1], pos = -1
+Output:
+
+false
+Explanation:
+
+There is no cycle in the linked list.
+
+### Constraints
+The number of nodes in the list is in the range [0, 10^4].
+-10^5 <= Node.val <= 10^5
+pos is -1 or a valid index in the linked-list.
+
+
+### Solution
+
+To determine whether a linked list has a cycle, we create a class for the solution. We start by checking if the linked list is empty or has only one node; in such cases, we return false as there can be no cycle. Next, we employ two pointers, a slow pointer and a fast pointer, both initialized at the head of the list. We iterate through the list in a loop where the fast pointer advances two steps at a time while the slow pointer moves one step at a time. If there is a cycle, the two pointers will eventually meet. If the fast pointer reaches the end of the list without meeting the slow pointer, it confirms the absence of a cycle, and we return false. This algorithm has a time complexity of O(n), with n being the number of nodes in the linked list, and it operates with a space complexity of O(1), using only a constant number of pointers and integer variables, making it an efficient approach for detecting cycles in a linked list.
+
+Time Complexity
+The time complexity of this algorithm is O(n), where n is the number of nodes in the linked list. The primary factor contributing to this time complexity is the while loop that traverses the linked list.
+
+In the worst case, where there is no cycle, the while loop iterates through all n nodes exactly once. If there is a cycle, the loop still iterates through all the nodes at most twice. This is because the slow pointer moves one step at a time, and the fast pointer moves two steps at a time, and they will meet after at most two cycles of the loop. Therefore, the time complexity is O(n).
+
+Space Complexity
+The space complexity of this algorithm is O(1), which means it uses constant space. The space used by the algorithm does not depend on the size of the input linked list but remains constant throughout the execution. The algorithm uses only a constant number of pointers (slow and fast) and a few integer variables. It doesn't use any additional data structures that grow with the input size.
+
+Overall, this algorithm is efficient both in terms of time complexity and space complexity, making it a suitable approach for detecting cycles in a linked list, as required in the problem statement.
