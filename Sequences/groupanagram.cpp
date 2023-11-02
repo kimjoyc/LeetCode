@@ -38,15 +38,6 @@ strs[i] consists of lowercase English letters.
 */
 
 
-To group anagrams together, we can use a hash map where the key is a sorted version of each string (representing its characters in alphabetical order), and the value is a list of strings that match that sorted version. Here's a C++ solution to achieve this:
-
-cpp
-Copy code
-#include <unordered_map>
-#include <vector>
-#include <string>
-#include <algorithm>
-
 class Solution {
 public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
