@@ -1,4 +1,4 @@
-## Reverse a Linked List	
+## Reverse a Linked List	(EASY)
 ### Problem Statement
 You are given the head of a singly linked list. Your task is to reverse the list and return the reversed list.
 ### Example
@@ -43,7 +43,7 @@ Space Complexity:
 
 The space complexity is O(1), meaning the algorithm uses a constant amount of extra space. This space is used for the prev, current, and next_node pointers, and it doesn't depend on the size of the input linked list.
 
-## Detect Cycle in a Linked List	
+## Detect Cycle in a Linked List (EASY)
 
 ### Problem Statement
 Given head, the head of a linked list, determine if the linked list has a cycle in it.
