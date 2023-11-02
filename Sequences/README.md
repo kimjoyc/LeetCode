@@ -1,4 +1,4 @@
-## Contains Duplicate
+## Contains Duplicate (EASY)
 ### Problem Statement
 Given an integer array nums, determine if any value appears at least twice in the array, returning true if duplicates exist and false if all elements are distinct.
 
@@ -13,7 +13,7 @@ Output: true
 ### Solution
 The provided C++ code defines a Solution class with a function containsDuplicate that checks for duplicates in the input array using an unordered map to store the count of each element. The time complexity is O(n), and the space complexity is O(n).
 
-## Two Sum
+## Two Sum (EASY)
 
 ### Problem Statement
 Given an array of integers nums and an integer target, find two numbers in the array that sum up to the target and return their indices. Assume that there is exactly one solution and the same element is not used twice.
@@ -31,7 +31,7 @@ Output: [0,1]
 The provided C++ code defines a Solution class with a function twoSum that uses a hash map to store previously seen numbers and their indices. The algorithm achieves O(n^2) time complexity and O(1) space complexity.
 
 
-## Best Time to Buy and Sell Stock
+## Best Time to Buy and Sell Stock (EASY)
 ### Problem Statement
 You are given an array prices where prices[i] is the price of a given stock on the ith day. The goal is to maximize profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. If no profit can be achieved, return 0.
 
@@ -52,7 +52,7 @@ Explanation: No transactions are done, max profit = 0.
 The provided C++ code defines a Solution class with a maxProfit function. This algorithm efficiently calculates the maximum profit that can be achieved by iterating through the given stock prices array. It keeps track of the maximum profit and the minimum price seen so far while traversing the array. The algorithm achieves a time complexity of O(n) and a space complexity of O(1), where n is the size of the input prices array.
 
 
-## Valid Anagram
+## Valid Anagram (EASY)
 This code provides a solution to determine if two given strings, s and t, are anagrams of each other. An anagram is a word or phrase formed by rearranging the letters of another word or phrase, using all the original letters exactly once.
 
 ### Example
@@ -86,7 +86,7 @@ Handling Unicode Characters (Follow-up)
 If the inputs contain Unicode characters, adapt the solution by using a hash map or an array of appropriate size to accommodate the larger character set. The time complexity remains O(n), and the space complexity becomes O(k), where k is the size of the character set (e.g., 128 for ASCII, or a larger value for Unicode).
 
 
-## Valid Parentheses
+## Valid Parentheses (EASY)
 ### Problem Statement
 Given a string s containing just the characters '(', ')', '{', '}', '[', and ']', determine if the input string is valid.
 
@@ -135,7 +135,7 @@ The space complexity of the solution is O(n), where n is the length of the input
 
 This algorithm efficiently validates the input string for valid parentheses using a stack-based approach, ensuring adherence to the specified rules for valid parentheses.
 
-## Maximum Subarray Sum
+## Maximum Subarray Sum (EASY)
 ### Problem Statement
 Given an integer array nums, find the contiguous subarray with the largest sum and return the sum of that subarray.
 
@@ -165,7 +165,7 @@ The time complexity of this solution is O(n), where n is the size of the input v
 Space Complexity
 The space complexity is O(1), indicating constant space usage.
 
-## Product of Array Except Self
+## Product of Array Except Self (MEDIUM)
 ### Problem Statement
 Given an array of integers, return a new array such that each element at index i of the new array is the product of all the numbers in the original array except the one at i.
 
@@ -188,7 +188,7 @@ Elements in the given array are within the range [-10^4, 10^4].
 The algorithm can be implemented using two passes through the input array. The first pass calculates the product of all elements to the left of each element, and the second pass calculates the product of all elements to the right of each element. The final result is the product of the left and right products for each element. The time complexity of this algorithm is O(N) and the space complexity is O(1) excluding the output array, or O(N) including the output array.
 
 
-## 3Sum
+## 3Sum (Medium)
 
 ### Problem Statement
 Given an integer array `nums`, return all the triplets `[nums[i], nums[j], nums[k]]` such that `i != j`, `i != k`, and `j != k`, and `nums[i] + nums[j] + nums[k] == 0`.
@@ -251,7 +251,7 @@ Output vector and set: O(n^2)
 Overall space complexity: O(n^2) due to the potential O(n^2) triplets and the set to store them.
 
 
-## Merge Intervals
+## Merge Intervals (Medium)
 ### Problem Statement
 You are given a list of intervals, where each interval is represented by a pair of integers [start, end]. Your task is to merge overlapping intervals and return a list of non-overlapping intervals.
 
@@ -295,7 +295,7 @@ The overall space complexity is O(n) due to the output vector storing the merged
 
 
 
-##  Maximum Product Subarray
+##  Maximum Product Subarray (Optional: Medium)
 ### Problem Statement
 You are given an integer array nums, and your task is to find a subarray within it that has the largest product, and return the value of that product. The test cases are designed in such a way that the answer will always fit within a 32-bit integer.
 
@@ -322,7 +322,7 @@ Space Complexity
 The solution uses a constant amount of extra space, regardless of the input size. It maintains only a few variables, resulting in a space complexity of O(1), indicating constant space usage.
 
 
-## Search in Rotated Sorted Array	
+## Search in Rotated Sorted Array	(Optional: Medium)
 
 
 ### Problem Statement
