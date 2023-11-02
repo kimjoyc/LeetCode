@@ -63,5 +63,17 @@ public:
     }
 };
 /*
+Time Complexity:
 
+Iterating through the strs array: This loop goes through each string in the input array, which consists of n strings, where n is the length of the strs array.
+Sorting each string: Sorting takes O(k * log(k)) time, where 'k' is the maximum length of a string in the array. In this case, the maximum length is 100 characters (as per the constraint).
+Adding the original string to the corresponding group: This operation is O(1) because it involves inserting an element into a hash map.
+Transforming the hash map into the required output format: This step also takes O(n) time since we iterate through the hash map.
+Overall, the time complexity of this code is O(n * k * log(k)), where 'n' is the number of strings, and 'k' is the maximum length of a string.
+
+Space Complexity:
+
+The space used for the anagramGroups unordered_map is O(n * k) because, in the worst case, each string may have 'k' characters, and there could be 'n' such strings.
+The result vector also requires O(n * k) space since it stores the grouped anagrams.
+Therefore, the space complexity of this code is O(n * k).
 */
