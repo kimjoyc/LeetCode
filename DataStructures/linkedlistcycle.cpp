@@ -41,74 +41,6 @@ pos is -1 or a valid index in the linked-list.
 Follow up: Can you solve it using O(1) (i.e. constant) memory?
 */
 
-struct ListNode {
-    int val;
-    ListNode* next;
-    ListNode(int x) : val(x), next(nullptr) {}
-};
-
-class Solution {
-public:
-    bool hasCycle(ListNode* head) {
-        if (head == nullptr || head->next == nullptr) {
-            return false; // No cycle if the list is empty or has only one node.
-        }
-
-        ListNode* slow = head;
-        ListNode* fast = head;
-
-        while (fast != nullptr && fast->next != nullptr) {
-            slow = slow->next;       // Move slow one step.
-            fast = fast->next->next; // Move fast two steps.
-
-            if (slow == fast) {
-                return true; // If slow and fast meet, there is a cycle.
-            }
-        }
-
-        return false; // If fast reaches the end, there is no cycle.
-    }
-};
-
-int main() {
-    // Create a linked list and test for a cycle.
-    ListNode* head = new ListNode(3);
-    head->next = new ListNode(2);
-    head->next->next = new ListNode(0);
-    head->next->next->next = new ListNode(-4);
-    head->next->next->next->next = head->next; // Create a cycle
-
-    Solution solution;
-    bool hasCycle = solution.hasCycle(head);
-
-    if (hasCycle) {
-        std::cout << "The linked list has a cycle." << std::endl;
-    } else {
-        std::cout << "The linked list does not have a cycle." << std::endl;
-    }
-
-    return 0;
-}
-In this code, the hasCycle function uses two pointers, slow and fast, to traverse the linked list. If there's a cycle, they will meet at some point. If there's no cycle, the fast pointer will reach the end of the list, and the function will return false.
-
-
-
-
-User
-comment each line of code
-ChatGPT
-Sure, here's the code with comments explaining each line:
-
-cpp
-Copy code
-#include <iostream>
-
-// Define a struct for a singly-linked list node.
-struct ListNode {
-    int val;          // Value stored in the node.
-    ListNode* next;   // Pointer to the next node.
-    ListNode(int x) : val(x), next(nullptr) {} // Constructor to create a node with a given value.
-};
 
 // Create a class for the solution.
 class Solution {
@@ -137,5 +69,13 @@ public:
 
 
 /*
+Time Complexity:
+The time complexity of this algorithm is O(n), where n is the number of nodes in the linked list. The primary factor contributing to this time complexity is the while loop that traverses the linked list.
 
+In the worst case, where there is no cycle, the while loop iterates through all n nodes exactly once. If there is a cycle, the loop still iterates through all the nodes at most twice. This is because the slow pointer moves one step at a time, and the fast pointer moves two steps at a time, and they will meet after at most two cycles of the loop. Therefore, the time complexity is O(n).
+
+Space Complexity:
+The space complexity of this algorithm is O(1), which means it uses constant space. The space used by the algorithm does not depend on the size of the input linked list but remains constant throughout the execution. The algorithm uses only a constant number of pointers (slow and fast) and a few integer variables. It doesn't use any additional data structures that grow with the input size.
+
+Overall, this algorithm is efficient both in terms of time complexity and space complexity, making it a suitable approach for detecting cycles in a linked list, as required in the problem statement.
 */
