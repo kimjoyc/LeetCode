@@ -321,6 +321,27 @@ The solution has a time complexity of O(n), where 'n' is the number of elements 
 Space Complexity
 The solution uses a constant amount of extra space, regardless of the input size. It maintains only a few variables, resulting in a space complexity of O(1), indicating constant space usage.
 
+## Group Anagrams (MEDIUM)
+### Problem Statement
+Given an array of strings strs, you need to group the anagrams together. An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+
+### Example
+Input
+strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
+Output
+[["bat"], ["nat", "tan"], ["ate", "eat", "tea"]]
+Constraints
+1 <= strs.length <= 10^4
+0 <= strs[i].length <= 100
+strs[i] consists of lowercase English letters.
+
+
+### Solution
+The problem at hand is to group anagrams within an array of strings. An anagram is defined as a word or phrase formed by rearranging the letters of another word or phrase, using all the original letters exactly once. To efficiently tackle this problem, we employ a hash map to categorize the anagrams. The C++ solution iterates through the input array of strings, sorts the characters in each string to generate a key, and adds the original string to the corresponding group in the hash map. Finally, the hash map is transformed into the desired output format, resulting in a vector of vectors, each containing grouped anagrams.
+
+In terms of time complexity, the code operates in O(n * k * log(k)) time, where 'n' represents the number of strings in the input array, and 'k' is the maximum length of a string. The space complexity is O(n * k), taking into account the space needed for the hash map and the resultant vector of grouped anagrams.
+
+
 
 ## Search in Rotated Sorted Array	(Optional: Medium)
 
