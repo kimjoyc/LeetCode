@@ -58,5 +58,11 @@ int maxArea(std::vector<int>& height) {  // Define a function that takes a refer
 }
 
 /*
+Time Complexity:
+The time complexity of this code is O(n), where 'n' is the number of elements in the input array 'height'. This is because the code uses a two-pointer approach that traverses the array from both ends towards the center, and in the worst case, each pointer is moved at most 'n-1' times.
 
+Space Complexity:
+The space complexity is O(1), which means it uses a constant amount of extra space regardless of the size of the input array. The code only uses a few integer variables (maxArea, left, right, h, width, area), and it does not depend on the size of the input array. Therefore, the space complexity remains constant.
+
+In summary, the code provides an efficient solution to the problem with a time complexity of O(n) and a space complexity of O(1), making it optimal in terms of space usage.
 */
