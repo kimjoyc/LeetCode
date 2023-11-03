@@ -1,4 +1,6 @@
 ## Reverse a Linked List	(EASY)
+
+### Referred Video Link : https://www.youtube.com/watch?v=G0_I-ZF0S38&ab_channel=NeetCode
 ### Problem Statement
 You are given the head of a singly linked list. Your task is to reverse the list and return the reversed list.
 ### Example
@@ -44,6 +46,8 @@ Space Complexity:
 The space complexity is O(1), meaning the algorithm uses a constant amount of extra space. This space is used for the prev, current, and next_node pointers, and it doesn't depend on the size of the input linked list.
 
 ## Detect Cycle in a Linked List (EASY)
+### Referred Video Link : [https://www.youtube.com/watch?v=G0_I-ZF0S38&ab_channel=NeetCode](https://www.youtube.com/watch?v=gBTe7lFR3vc&t=577s&ab_channel=NeetCode)
+
 
 ### Problem Statement
 Given head, the head of a linked list, determine if the linked list has a cycle in it.
