@@ -1,7 +1,7 @@
 ## Reverse a Linked List	(EASY)
 
 ### Referred Video Link : https://www.youtube.com/watch?v=G0_I-ZF0S38&ab_channel=NeetCode
-[![Watch the video](https://img.youtube.com/vi/G0_I-ZF0S38&ab_channel=NeetCode/maxresdefault.jpg)](https://youtu.be/T-D1KVIuvjA)
+[![Watch the video](https://img.youtube.com/vi/G0_I-ZF0S38&ab_channel=NeetCode/maxresdefault.jpg)](https://www.youtube.com/watch?v=G0_I-ZF0S38&ab_channel=NeetCode)
 
 ### Problem Statement
 You are given the head of a singly linked list. Your task is to reverse the list and return the reversed list.
