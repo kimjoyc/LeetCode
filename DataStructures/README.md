@@ -104,3 +104,37 @@ Space Complexity
 The space complexity of this algorithm is O(1), which means it uses constant space. The space used by the algorithm does not depend on the size of the input linked list but remains constant throughout the execution. The algorithm uses only a constant number of pointers (slow and fast) and a few integer variables. It doesn't use any additional data structures that grow with the input size.
 
 Overall, this algorithm is efficient both in terms of time complexity and space complexity, making it a suitable approach for detecting cycles in a linked list, as required in the problem statement.
+
+
+
+## Container With Most Water (MED)
+### Relevant Video Link: https://www.youtube.com/watch?v=UuiTKBwPgAo&t=3s&ab_channel=NeetCode
+
+### Problem Statement
+You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]). Your task is to find two lines that, together with the x-axis, form a container, such that the container contains the most water. You need to return the maximum amount of water that the container can store.
+
+It's important to note that you may not slant the container, which means the lines must be vertical.
+
+### Example
+Input: height = [1,8,6,2,5,4,8,3,7]
+Output: 49
+Explanation: The above vertical lines are represented by the array [1,8,6,2,5,4,8,3,7]. In this case, the maximum area of water (blue section) the container can contain is 49.
+
+Input: height = [1,1]
+Output: 1
+### Constraints
+n == height.length
+2 <= n <= 105
+0 <= height[i] <= 104
+### Solution
+The provided solution is a C++ function maxArea that takes a reference to a vector of integers height as input. It uses a two-pointer approach to find the maximum area by considering the height and width of the container formed by two lines.
+Initialize a variable maxArea to store the maximum area found so far.
+Initialize two pointers, left and right, to point to the start and end of the vector, respectively.
+Enter a while loop that continues until left is less than right.
+Calculate the height of the container h as the minimum of heights at left and right.
+Calculate the width of the container width as the difference between right and left.
+Calculate the area of the container by multiplying h and width, and update maxArea with the maximum value seen so far.
+Move the pointers: If the height at left is less than the height at right, move the left pointer one step to the right; otherwise, move the right pointer one step to the left.
+Repeat steps 4-7 until the pointers meet.
+The time complexity of this solution is O(n) as it iterates through the array only once, and the space complexity is O(1) since it uses a constant amount of extra space.
+In summary, this solution provides an efficient and optimal way to find the maximum water container area.
