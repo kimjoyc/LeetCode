@@ -141,7 +141,7 @@ In summary, this solution provides an efficient and optimal way to find the maxi
 
 
 ## Find Minimum in Rotated Sorted Array (MED)
-### Relevant Video Link: https://www.youtube.com/watch?v=UuiTKBwPgAo&t=3s&ab_channel=NeetCode
+### Relevant Video Link: https://www.youtube.com/watch?v=nIVW4P8b1VA&t=5s&ab_channel=NeetCode
 ### Problem Statement
 Suppose you have an array of unique elements that is sorted in ascending order but has been rotated between 1 and n times. For example, the array nums might look like:
 
