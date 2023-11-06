@@ -138,3 +138,65 @@ Move the pointers: If the height at left is less than the height at right, move 
 Repeat steps 4-7 until the pointers meet.
 The time complexity of this solution is O(n) as it iterates through the array only once, and the space complexity is O(1) since it uses a constant amount of extra space.
 In summary, this solution provides an efficient and optimal way to find the maximum water container area.
+
+
+## Find Minimum in Rotated Sorted Array (MED)
+### Relevant Video Link: [https://www.youtube.com/watch?v=UuiTKBwPgAo&t=3s&ab_channel=NeetCode
+](https://www.youtube.com/watch?v=nIVW4P8b1VA)
+### Problem Statement
+Suppose you have an array of unique elements that is sorted in ascending order but has been rotated between 1 and n times. For example, the array nums might look like:
+
+[4,5,6,7,0,1,2] if it was rotated 4 times.
+[0,1,2,4,5,6,7] if it was rotated 7 times.
+You need to find and return the minimum element in this rotated array.
+
+### Example
+Example 1:
+
+Input: nums = [3,4,5,1,2]
+
+Output: 1
+
+Explanation: The original array was [1,2,3,4,5] rotated 3 times.
+
+Example 2:
+
+Input: nums = [4,5,6,7,0,1,2]
+
+Output: 0
+
+Explanation: The original array was [0,1,2,4,5,6,7] and it was rotated 4 times.
+
+Example 3:
+
+Input: nums = [11,13,15,17]
+
+Output: 11
+
+Explanation: The original array was [11,13,15,17] and it was rotated 4 times.
+
+### Constraints
+n == nums.length
+1 <= n <= 5000
+-5000 <= nums[i] <= 5000
+All the integers in nums are unique.
+nums is sorted and rotated between 1 and n times.
+### Solution 
+We use a binary search algorithm to efficiently find the minimum element in the rotated sorted array. The key steps are as follows:
+
+Initialize the result variable to the first element of the array.
+Initialize left and right pointers to the beginning and end of the array, respectively.
+While the left pointer is less than or equal to the right pointer, perform the following steps:
+If the values at the left and right pointers indicate that the subarray is already sorted, update the result with the minimum value and break the loop.
+Calculate the middle index as the average of the left and right pointers.
+Update the result with the minimum of the current result and the middle value.
+Determine which side of the rotation we are on (left or right) based on the middle value.
+Adjust the left or right pointer accordingly to continue the search.
+Return the minimum value found in the rotated or sorted array.
+Time Complexity
+The time complexity of this solution is O(log n) because it uses a binary search algorithm. In each step of the binary search, the search space is effectively halved, resulting in a logarithmic time complexity.
+
+Space Complexity
+The space complexity is O(1), which means it uses a constant amount of extra space regardless of the input array size. It only uses a few integer variables and does not depend on the size of the input array. There are no additional data structures or significant memory usage.
+
+In summary, this algorithm efficiently finds the minimum element in a sorted or rotated sorted array with a time complexity of O(log n) and a space complexity of O(1).
