@@ -35,7 +35,41 @@ Submissions
 Acceptance Rate
 52.8%
 */
+    vector<int> count(26, 0); // Store the count of characters in the current window
+    int maxCount = 0;        // Store the maximum count of any character in the current window
+    int start = 0;           // Start of the window
 
+    int maxLength = 0; // Maximum length of the substring with the same character
+
+    for (int end = 0; end < s.length(); end++) {
+        count[s[end] - 'A']++; // Increment the count of the current character
+
+        // Update the maximum count in the current window
+        maxCount = max(maxCount, count[s[end] - 'A']);
+
+        // If the number of replacements needed is greater than k,
+        // we need to shrink the window from the left side
+        if (end - start + 1 - maxCount > k) {
+            count[s[start] - 'A']--; // Remove the character at the start of the window
+            start++; // Shrink the window
+        }
+
+        // Update the maximum length of the substring
+        maxLength = max(maxLength, end - start + 1);
+    }
+
+    return maxLength;
 /*
+Time Complexity:
+The time complexity of the characterReplacement function is O(N), where N is the length of the input string s. This is because the function uses a single pass through the input string using a sliding window approach.
 
+Space Complexity:
+The space complexity of the solution is O(26) = O(1) because the size of the count array is fixed at 26, representing the 26 uppercase English letters. This space usage is constant and not dependent on the input size.
+
+In addition to the count array, there are a few integer variables used to store indices and counts, which also consume constant space. Therefore, the overall space complexity of the solution is O(1).
+
+So, to summarize:
+
+Time Complexity: O(N) where N is the length of the input string.
+Space Complexity: O(1), constant space usag
 */
