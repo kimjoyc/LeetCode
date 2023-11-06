@@ -42,7 +42,49 @@ All the integers of nums are unique.
 nums is sorted and rotated between 1 and n times.
 
 */
+class Solution {
+public:
+    int findMin(vector<int>& nums) {
+        
+        // Initialize the result variable to store the first value of the array
+        int result = nums[0];
+        // Initialize the left pointer at the beginning of the array
+        int left = 0;
+        // Initialize the right pointer at the end of the array
+        int right = nums.size() - 1;
 
+        // Loop through the array as long as the left pointer is less than or equal to the right pointer
+        while (left <= right) {
+            // In a sorted array, when the left value is less than the right value, it's already sorted,
+            // so we can safely take the left value as the minimum and break out of the loop.
+            if (nums[left] < nums[right]) {
+                result = min(result, nums[left]);
+                break;
+            }
+
+            // Initialize the middle pointer as the average of the left and right pointers
+            int middle = (left + right) / 2;
+            // Compare the current middle value to the result and update the result if necessary.
+            result = min(result, nums[middle]);
+
+            // In a rotated array, if the middle value is greater than or equal to the left value,
+            // it means we are on the left side of the rotation where values are descending.
+            if (nums[middle] >= nums[left]) {
+                // Adjust the left pointer to search to the right of the middle.
+                left = middle + 1;
+            }
+            // If the middle value is less than the left value, we are on the right side of the rotation
+            // where values are ascending.
+            else {
+                // Adjust the right pointer to search to the left of the middle.
+                right = middle - 1; 
+            }
+        }
+
+        // Return the minimum value found in the rotated or sorted array.
+        return result;
+    }
+};
 /*
 
 */
