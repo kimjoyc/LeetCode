@@ -36,16 +36,16 @@ n == height.length
 0 <= height[i] <= 104
 */
 
-int maxArea(std::vector<int>& height) {  // Define a function that takes a reference to a vector of integers as input
+int maxArea(vector<int>& height) {  // Define a function that takes a reference to a vector of integers as input
     int maxArea = 0;  // Initialize a variable to store the maximum area found so far
     int left = 0;  // Initialize a pointer 'left' to point to the start of the vector
     int right = height.size() - 1;  // Initialize a pointer 'right' to point to the end of the vector
 
     while (left < right) {  // Start a while loop that continues until 'left' is less than 'right'
-        int h = std::min(height[left], height[right]);  // Calculate the height of the container as the minimum of heights at 'left' and 'right'
+        int h = min(height[left], height[right]);  // Calculate the height of the container as the minimum of heights at 'left' and 'right'
         int width = right - left;  // Calculate the width of the container as the difference between 'right' and 'left'
         int area = h * width;  // Calculate the area of the container by multiplying height and width
-        maxArea = std::max(maxArea, area);  // Update 'maxArea' with the maximum value seen so far using std::max
+        maxArea = max(maxArea, area);  // Update 'maxArea' with the maximum value seen so far using std::max
 
         if (height[left] < height[right]) {  // Check if the height at 'left' is less than the height at 'right'
             left++;  // Move the 'left' pointer one step to the right
