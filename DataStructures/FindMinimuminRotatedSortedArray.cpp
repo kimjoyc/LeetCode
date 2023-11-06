@@ -86,5 +86,11 @@ public:
     }
 };
 /*
+Time Complexity:
+The time complexity of this code is O(log n), where n is the number of elements in the input vector nums. This is because it uses a binary search algorithm to find the minimum element in the array. In each step of the binary search, the search space is effectively halved, leading to a logarithmic time complexity.
 
+Space Complexity:
+The space complexity of this code is O(1), which means it uses a constant amount of extra space regardless of the size of the input array. The only additional memory used is for a few integer variables (result, left, right, middle), which do not depend on the size of the input array. There are no data structures like arrays or lists used, and the space consumed by the recursive call stack is also very small and constant.
+
+In summary, this code efficiently finds the minimum element in a sorted or rotated sorted array with a time complexity of O(log n) and a space complexity of O(1).
 */
