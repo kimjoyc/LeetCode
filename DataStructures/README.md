@@ -197,3 +197,41 @@ Space Complexity
 The space complexity is O(1), which means it uses a constant amount of extra space regardless of the input array size. It only uses a few integer variables and does not depend on the size of the input array. There are no additional data structures or significant memory usage.
 
 In summary, this algorithm efficiently finds the minimum element in a sorted or rotated sorted array with a time complexity of O(log n) and a space complexity of O(1).
+
+
+## Longest Repeating Character Replacement (MEDIUM)
+### Problem Statement
+You are given a string s consisting of uppercase English letters and an integer k. You can choose any character within the string and change it to any other uppercase English character. You are allowed to perform this operation at most k times.
+
+Your task is to find the length of the longest substring containing the same letter after performing the specified character replacements.
+
+### Examples
+Example 1:
+Input:
+s = "ABAB", k = 2
+Output:
+4
+Explanation: Replace the two 'A's with two 'B's or vice versa. The substring "BBBB" has the longest repeating letters, which is 4. There may exist other ways to achieve this answer too.
+Example 2:
+Input:
+s = "AABABBA", k = 1
+Output:
+4
+Explanation: Replace the one 'A' in the middle with 'B' and form "AABBBBA". The substring "BBBB" has the longest repeating letters, which is 4. There may exist other ways to achieve this answer too.
+
+### Constraints
+1 <= s.length <= 105
+s consists of only uppercase English letters.
+0 <= k <= s.length
+### Solution
+To solve this problem, the following approach can be used:
+Initialize an array count to keep track of the count of each character in the current window. The array has a size of 26 to represent the 26 uppercase English letters.
+Maintain a variable maxCount to store the maximum count of any character in the current window.
+Initialize a variable start to represent the start of the current window.
+Initialize a variable maxLength to store the maximum length of the substring with the same character.
+Iterate through the input string s using a sliding window approach. For each character in the window, update the count array and calculate the maximum count.
+If the number of replacements needed is greater than k, shrink the window from the left side by removing the character at the start of the window and incrementing the start index.
+Update the maximum length of the substring as you iterate through the string.
+Return the maxLength as the result.
+Time Complexity: O(N), where N is the length of the input string s. The function performs a single pass through the input string using a sliding window approach.
+Space Complexity: O(1), as the space usage is constant and not dependent on the input size. The count array has a fixed size of 26, representing the 26 uppercase English letter
