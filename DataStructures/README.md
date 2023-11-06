@@ -108,7 +108,6 @@ Overall, this algorithm is efficient both in terms of time complexity and space 
 
 
 ## Container With Most Water (MED)
-### Relevant Video Link: https://www.youtube.com/watch?v=UuiTKBwPgAo&t=3s&ab_channel=NeetCode
 
 ### Problem Statement
 You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]). Your task is to find two lines that, together with the x-axis, form a container, such that the container contains the most water. You need to return the maximum amount of water that the container can store.
@@ -141,7 +140,6 @@ In summary, this solution provides an efficient and optimal way to find the maxi
 
 
 ## Find Minimum in Rotated Sorted Array (MED)
-### Relevant Video Link: https://www.youtube.com/watch?v=nIVW4P8b1VA&t=5s&ab_channel=NeetCode
 ### Problem Statement
 Suppose you have an array of unique elements that is sorted in ascending order but has been rotated between 1 and n times. For example, the array nums might look like:
 
