@@ -53,6 +53,17 @@ Given a string s, find the length of the longest substring without repeating cha
 ### Solution
 The C++ solution employs a sliding window technique to find the length of the longest substring without repeating characters in a given string 's'. Two pointers, 'left' and 'right', manage the window, while a set, 'charSet', tracks unique characters. The algorithm iterates through the string, expanding and contracting the window as needed. The time complexity is O(n), where n is the string length, and the space complexity is O(min(n, m)), with m being the character set size. In practical terms, for a reasonably small character set, the space complexity is effectively O(1).
 
+## Number of Islands
+
+### Problem Statement
+Given a binary grid representing a map with '1's (land) and '0's (water), the task is to return the number of islands in the grid. An island is formed by connecting adjacent lands horizontally or vertically, and it is assumed that all four edges of the grid are surrounded by water. 
+
+### Solution
+The C++ code presents a Solution class with a public function, numIslands, tasked with determining the count of islands within a 2D grid of '1's (land) and '0's (water). Utilizing Depth-First Search (DFS) methodology, the algorithm initializes variables for grid dimensions and island count, employing nested loops to traverse each cell in the grid. When encountering a land cell ('1'), the counter increments, triggering a DFS function for exploring and marking connected land cells. The recursive DFS function visits each neighboring cell and marks it as visited. The main function demonstrates the solution's application with provided examples. Time complexity is O(M * N), as DFS may visit each cell once. The space complexity, O(M * N), arises from recursive calls and grid modification. In conclusion, the DFS solution efficiently counts islands with linear time and space complexity in binary grids.
+
+
+
+
 
 
 
