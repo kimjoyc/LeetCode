@@ -1,32 +1,5 @@
 /*
 
-0
-
-avatar
-Premium
-Debugging...
-Debugging...
-
-
-
-
-
-
-
-Run
-Description
-Editorial
-Editorial
-Solutions
-Solutions
-Submissions
-Submissions
-
-Code
-
-Testcase
-Test Result
-Test Result
 
 19. Remove Nth Node From End of List
 Medium
