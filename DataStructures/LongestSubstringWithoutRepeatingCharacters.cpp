@@ -66,20 +66,19 @@ int lengthOfLongestSubstring(string s) {
 Time Complexity:
 The time complexity of the code is O(n), where n is the length of the input string.
 
-Explanation:
 
 The while loop iterates through each character in the string exactly once.
 Both the left and right pointers move from 0 to n-1 at most.
 Each character is processed once, and no character is revisited in the worst case.
+
+
 Space Complexity:
 The space complexity of the code is O(min(n, m)), where n is the length of the input string and m is the size of the character set (26 for English letters, digits, symbols, and spaces).
 
-Explanation:
 
 The unordered_set<char> charSet is used to store unique characters in the current window.
 In the worst case, the size of the set can be the size of the entire character set (m), but it can also be smaller if there are fewer unique characters in the string.
 The space complexity is determined by the maximum number of unique characters in any substring.
 In practical terms, if the character set is reasonably small (e.g., English letters), the space complexity can be considered O(1) since the size of the character set is constant.
 
-In summary, the algorithm has a linear time complexity and a space complexity that depends on the size of the character set but is often considered constant or very small in practice.
 */
