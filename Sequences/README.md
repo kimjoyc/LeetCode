@@ -20,6 +20,8 @@ The provided C++ code defines a Solution class with a maxProfit function. This a
 
 ## Valid Anagram 
 ### Problem Statement
+
+### Solution
 The anagram-checking approach involves comparing character counts in strings s and t. If lengths differ, they aren't anagrams. Initialize a hash map to track character occurrences, update counts during linear iteration, and check for equality. Time complexity is O(n), space complexity is O(1) for lowercase English letters. For Unicode, adapt using a hash map or array, maintaining O(n) time and O(k) space, where k is the character set size.
 
 
