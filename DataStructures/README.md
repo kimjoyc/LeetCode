@@ -47,7 +47,7 @@ To address the problem, utilize a sliding window approach with an array named "c
 
 
 ## Longest Substring Without Repeating Characters
-### Problem Description
+### Problem Statement
 Given a string s, find the length of the longest substring without repeating characters.
 
 ### Solution
