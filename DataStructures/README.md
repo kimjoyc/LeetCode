@@ -62,8 +62,21 @@ Given a binary grid representing a map with '1's (land) and '0's (water), the ta
 The C++ code presents a Solution class with a public function, numIslands, tasked with determining the count of islands within a 2D grid of '1's (land) and '0's (water). Utilizing Depth-First Search (DFS) methodology, the algorithm initializes variables for grid dimensions and island count, employing nested loops to traverse each cell in the grid. When encountering a land cell ('1'), the counter increments, triggering a DFS function for exploring and marking connected land cells. The recursive DFS function visits each neighboring cell and marks it as visited. The main function demonstrates the solution's application with provided examples. Time complexity is O(M * N), as DFS may visit each cell once. The space complexity, O(M * N), arises from recursive calls and grid modification. In conclusion, the DFS solution efficiently counts islands with linear time and space complexity in binary grids.
 
 
+## Remove Nth Node From End of List
+### Problem Statement
+Given the head of a linked list, you are tasked with removing the nth node from the end of the list and returning its head.
 
+### Solution
+Utilize a two-pointer approach to traverse the linked list. Move the fast pointer ahead by n+1 steps, creating a gap of n nodes between fast and slow pointers. Proceed to move both pointers until the fast pointer reaches the end. Adjust the next pointer of the slow pointer to remove the nth node.
 
-
+Algorithm:
+Create a dummy node for simplifying edge cases.
+Move the fast pointer ahead by n + 1 steps.
+Traverse the list with both pointers until the fast pointer reaches the end.
+Adjust the slow pointer's next pointer to remove the nth node.
+Return the updated head of the linked list.
+Complexity:
+Time Complexity: O(N) - Linear time where N is the number of nodes.
+Space Complexity: O(1) - Constant space.
 
 
