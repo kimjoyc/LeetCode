@@ -79,4 +79,27 @@ Complexity:
 Time Complexity: O(N) - Linear time where N is the number of nodes.
 Space Complexity: O(1) - Constant space.
 
+## Palindromic Substrings
+### Problem Statement
+Given a string s, return the number of palindromic substrings in it.
+
+### Solution
+The solution involves expanding around each character in the string and checking for palindromic substrings. We handle both odd and even-length palindromes separately.
+
+Algorithm
+Initialize a variable count to 0 to store the count of palindromic substrings.
+
+Loop through each character in the string.
+
+For each character, consider it as the center of a potential palindrome and expand outward to find palindromes with odd length. Increment the count for each palindrome found.
+
+Reset the indices for the even-length palindrome and repeat the expansion process.
+
+Return the total count of palindromic substrings.
+
+Time Complexity
+The time complexity of this solution is O(n^2), where n is the length of the input string. This is because, in the worst case, we might need to expand around each character, and for each character, the expansion process can take O(n) time.
+
+Space Complexity
+The space complexity is O(1) as we use only a constant amount of extra space.
 
