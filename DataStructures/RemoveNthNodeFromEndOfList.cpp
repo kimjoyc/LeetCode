@@ -35,3 +35,29 @@ The number of nodes in the list is sz.
 
 Follow up: Could you do this in one pass?
 */
+
+class Solution {
+public:
+    ListNode* removeNthFromEnd(ListNode* head, int n) {
+        ListNode dummy(0);  // Create a dummy node to simplify edge cases
+        dummy.next = head;   // Point the dummy node to the head of the list
+        ListNode* fast = &dummy;  // Initialize the fast pointer to the dummy node
+        ListNode* slow = &dummy;  // Initialize the slow pointer to the dummy node
+
+        for (int i = 0; i <= n; ++i) {
+            fast = fast->next;  // Move the fast pointer ahead by n+1 steps
+        }
+
+        while (fast != nullptr) {
+            fast = fast->next;  // Move the fast pointer one step
+            slow = slow->next;  // Move the slow pointer one step
+        }
+
+        ListNode* temp = slow->next;        // Save the node to be removed
+        slow->next = slow->next->next;      // Remove the nth node by adjusting pointers
+        delete temp;                       // Free the memory of the removed node
+
+        return dummy.next;  // Return the updated head of the linked list
+            
+    }
+};
