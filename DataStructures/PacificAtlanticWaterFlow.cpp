@@ -106,6 +106,13 @@ private:
             int nj = j + dir.second;
             
             // Check conditions to determine whether to explore the neighboring cell
+
+         /*
+ni >= 0 && ni < m: Ensures that the new row index ni is within the valid row range of the matrix.
+nj >= 0 && nj < n: Ensures that the new column index nj is within the valid column range of the matrix.
+!canReach[ni][nj]: Ensures that the cell at position (ni, nj) has not been visited before in the current DFS traversal. This condition helps prevent infinite loops in the case of cycles in the graph formed by the matrix.
+heights[ni][nj] >= heights[i][j]: Ensures that the neighboring cell's height is greater than or equal to the current cell's height. This condition ensures that water can flow from the current cell to the neighboring cell.
+          */
             if (ni >= 0 && ni < m && nj >= 0 && nj < n && !canReach[ni][nj] && heights[ni][nj] >= heights[i][j]) {
                 dfs(heights, canReach, ni, nj);
             }
