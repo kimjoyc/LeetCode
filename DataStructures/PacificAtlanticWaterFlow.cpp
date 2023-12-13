@@ -44,3 +44,71 @@ n == heights[r].length
 1 <= m, n <= 200
 0 <= heights[r][c] <= 105
 */
+class Solution {
+public:
+    // Public method to find cells that can flow to both the Pacific and Atlantic Oceans
+    vector<vector<int>> pacificAtlantic(vector<vector<int>>& heights) {
+        vector<vector<int>> result;
+        if (heights.empty() || heights[0].empty()) {
+            return result;
+        }
+
+        int m = heights.size();
+        int n = heights[0].size();
+
+        // Matrix to mark cells that can reach the Pacific Ocean
+        vector<vector<bool>> canReachPacific(m, vector<bool>(n, false));
+        // Matrix to mark cells that can reach the Atlantic Ocean
+        vector<vector<bool>> canReachAtlantic(m, vector<bool>(n, false));
+
+        // DFS from top and left edges to mark cells that can reach the Pacific Ocean
+        for (int i = 0; i < m; ++i) {
+            dfs(heights, canReachPacific, i, 0);
+        }
+        for (int j = 0; j < n; ++j) {
+            dfs(heights, canReachPacific, 0, j);
+        }
+
+        // DFS from bottom and right edges to mark cells that can reach the Atlantic Ocean
+        for (int i = 0; i < m; ++i) {
+            dfs(heights, canReachAtlantic, i, n - 1);
+        }
+        for (int j = 0; j < n; ++j) {
+            dfs(heights, canReachAtlantic, m - 1, j);
+        }
+
+        // Find cells that can reach both Pacific and Atlantic Oceans
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < n; ++j) {
+                if (canReachPacific[i][j] && canReachAtlantic[i][j]) {
+                    result.push_back({i, j});
+                }
+            }
+        }
+
+        return result;
+    }
+
+private:
+    // Helper function for DFS traversal
+    void dfs(const vector<vector<int>>& heights, vector<vector<bool>>& canReach, int i, int j) {
+        int m = heights.size();
+        int n = heights[0].size();
+
+        // Mark the current cell as reachable
+        canReach[i][j] = true;
+
+        // Explore neighboring cells
+        vector<pair<int, int>> directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+        for (const auto& dir : directions) {
+            // Calculate new row index and column index based on the current direction
+            int ni = i + dir.first;
+            int nj = j + dir.second;
+            
+            // Check conditions to determine whether to explore the neighboring cell
+            if (ni >= 0 && ni < m && nj >= 0 && nj < n && !canReach[ni][nj] && heights[ni][nj] >= heights[i][j]) {
+                dfs(heights, canReach, ni, nj);
+            }
+        }
+    }
+};
