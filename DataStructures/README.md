@@ -67,6 +67,15 @@ Given an island represented by an m x n matrix where each cell contains the heig
 ### Solution
 The problem addresses identifying grid coordinates on an island where rainwater can flow to both the Pacific and Atlantic oceans. The island is represented by an m x n matrix, with each cell denoting the height above sea level. The solution employs Depth-First Search (DFS) to traverse the matrix, marking cells reachable from either the Pacific or Atlantic oceans. Starting from the top and left edges, cells that can reach the Pacific are marked, and similarly, cells that can reach the Atlantic are marked from the bottom and right edges. The marked cells are then examined to find coordinates where rainwater can flow to both oceans. The implementation includes a class Solution with methods for DFS and the main logic, with example usage provided in the main function. The time complexity is O(m * n), where m and n are the matrix dimensions, and the space complexity is also O(m * n) due to the matrices used for marking reachable cells.
 
+## Minimum Window Substring	
+### Problem Statement
+Given two strings s and t, find the minimum window substring in s containing all characters from t. If no such substring exists, return an empty string. The solution should run in O(m + n) time, where m and n are the lengths of strings s and t, respectively.
+### Solution
+The provided solution implements a sliding window algorithm to efficiently find the minimum window substring of two given strings s and t. The algorithm utilizes two frequency maps (targetFreq and windowFreq) and two pointers (left and right). The window expands by moving the right pointer and shrinks by moving the left pointer. The minimum window substring is updated when a valid window is found. The time complexity is O(m + n), where m is the length of string s, and n is the length of string t, and the space complexity is O(n), where n is the length of string t. The solution satisfies the given constraints and offers an efficient approach to the problem.
+
+
+
+
 
 
 
