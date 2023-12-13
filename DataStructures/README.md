@@ -7,18 +7,14 @@ In the iterative approach, two pointers, prev and current, are initialized. The 
 ## Detect Cycle in a Linked List 
 ### Problem Statement
 Given head, the head of a linked list, determine if the linked list has a cycle in it.
-
 There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer. Internally, pos is used to denote the index of the node that tail's next pointer is connected to. Note that pos is not passed as a parameter.
-
 Return true if there is a cycle in the linked list. Otherwise, return false.
 ### Solution
 To identify cycles in a linked list efficiently, a specialized class is implemented with a time complexity of O(n) and space complexity of O(1). The algorithm employs a two-pointer system, where a slow pointer and a fast pointer traverse the list. If they meet, a cycle is present; otherwise, a false value is returned. The algorithm's time complexity is determined by a while loop that traverses the linked list, iterating through all nodes at most twice. The space complexity is O(1), utilizing only a constant number of pointers and integer variables. Overall, this algorithm is well-suited for detecting cycles in a linked list with optimal efficiency.
 
 ## Container With Most Water 
-
 ### Problem Statement
 You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]). Your task is to find two lines that, together with the x-axis, form a container, such that the container contains the most water. You need to return the maximum amount of water that the container can store.
-
 ### Solution
 The C++ function maxArea employs a two-pointer approach on a vector of integers to efficiently find the maximum water container area. It iterates through the vector, calculating container height and width, updating maxArea accordingly, and adjusting pointers until convergence. The time complexity is O(n), and space complexity is O(1). This solution provides an optimal method for the task.
 
@@ -28,33 +24,23 @@ Suppose you have an array of unique elements that is sorted in ascending order b
 [4,5,6,7,0,1,2] if it was rotated 4 times.
 [0,1,2,4,5,6,7] if it was rotated 7 times.
 You need to find and return the minimum element in this rotated array.
-
 ### Solution 
 The algorithm efficiently finds the minimum element in a rotated or sorted array using binary search, achieving a time complexity of O(log n) and a space complexity of O(1). It initializes pointers, updates results based on sorted subarrays, and adjusts pointers to locate the minimum value. This approach consistently utilizes a minimal amount of extra space, making it effective for diverse array sizes.
 
-
-
 ## Longest Repeating Character Replacement 
-
 ### Problem Statement
 You are given a string s consisting of uppercase English letters and an integer k. You can choose any character within the string and change it to any other uppercase English character. You are allowed to perform this operation at most k times.
-
 Your task is to find the length of the longest substring containing the same letter after performing the specified character replacements.
-
 ### Solution
 To address the problem, utilize a sliding window approach with an array named "count" to track character occurrences. Maintain variables for "maxCount," "start," and "maxLength." Iterate through the string, updating counts and adjusting the window as needed. Return the final "maxLength." The time complexity is O(N), and the space complexity is O(1), as the array size remains constant.
-
-
 
 ## Longest Substring Without Repeating Characters
 ### Problem Statement
 Given a string s, find the length of the longest substring without repeating characters.
-
 ### Solution
 The C++ solution employs a sliding window technique to find the length of the longest substring without repeating characters in a given string 's'. Two pointers, 'left' and 'right', manage the window, while a set, 'charSet', tracks unique characters. The algorithm iterates through the string, expanding and contracting the window as needed. The time complexity is O(n), where n is the string length, and the space complexity is O(min(n, m)), with m being the character set size. In practical terms, for a reasonably small character set, the space complexity is effectively O(1).
 
 ## Number of Islands
-
 ### Problem Statement
 Given a binary grid representing a map with '1's (land) and '0's (water), the task is to return the number of islands in the grid. An island is formed by connecting adjacent lands horizontally or vertically, and it is assumed that all four edges of the grid are surrounded by water. 
 
@@ -65,41 +51,25 @@ The C++ code presents a Solution class with a public function, numIslands, taske
 ## Remove Nth Node From End of List
 ### Problem Statement
 Given the head of a linked list, you are tasked with removing the nth node from the end of the list and returning its head.
-
 ### Solution
-Utilize a two-pointer approach to traverse the linked list. Move the fast pointer ahead by n+1 steps, creating a gap of n nodes between fast and slow pointers. Proceed to move both pointers until the fast pointer reaches the end. Adjust the next pointer of the slow pointer to remove the nth node.
-
-Algorithm:
-Create a dummy node for simplifying edge cases.
-Move the fast pointer ahead by n + 1 steps.
-Traverse the list with both pointers until the fast pointer reaches the end.
-Adjust the slow pointer's next pointer to remove the nth node.
-Return the updated head of the linked list.
-Complexity:
-Time Complexity: O(N) - Linear time where N is the number of nodes.
-Space Complexity: O(1) - Constant space.
+Implement a two-pointer approach to navigate through the linked list. Advance the fast pointer by n+1 steps, establishing a gap of n nodes between the fast and slow pointers. Continue moving both pointers until the fast pointer reaches the end. Modify the next pointer of the slow pointer to eliminate the nth node. The algorithm involves creating a dummy node for handling edge cases, moving the fast pointer ahead by n+1 steps, traversing the list with both pointers until the fast pointer reaches the end, adjusting the slow pointer's next pointer to remove the nth node, and finally returning the updated head of the linked list. The time complexity is O(N) (linear time), where N is the number of nodes, and the space complexity is O(1) (constant space).
 
 ## Palindromic Substrings
 ### Problem Statement
 Given a string s, return the number of palindromic substrings in it.
-
 ### Solution
-The solution involves expanding around each character in the string and checking for palindromic substrings. We handle both odd and even-length palindromes separately.
+The solution efficiently identifies palindromic substrings in a given string by iterating through each character and expanding around it to find both odd and even-length palindromes separately. The algorithm initializes a count variable to track the number of palindromic substrings. It operates with a time complexity of O(n^2), where n is the length of the input string, due to the potential need to expand around each character. The space complexity is O(1) as it utilizes only a constant amount of extra space.
 
-Algorithm
-Initialize a variable count to 0 to store the count of palindromic substrings.
 
-Loop through each character in the string.
+## Pacific Atlantic Water Flow	
+### Problem Statement
+Given an island represented by an m x n matrix where each cell contains the height above sea level, find and return the grid coordinates where rainwater can flow from the cell to both the Pacific and Atlantic oceans.
+### Solution
+The problem addresses identifying grid coordinates on an island where rainwater can flow to both the Pacific and Atlantic oceans. The island is represented by an m x n matrix, with each cell denoting the height above sea level. The solution employs Depth-First Search (DFS) to traverse the matrix, marking cells reachable from either the Pacific or Atlantic oceans. Starting from the top and left edges, cells that can reach the Pacific are marked, and similarly, cells that can reach the Atlantic are marked from the bottom and right edges. The marked cells are then examined to find coordinates where rainwater can flow to both oceans. The implementation includes a class Solution with methods for DFS and the main logic, with example usage provided in the main function. The time complexity is O(m * n), where m and n are the matrix dimensions, and the space complexity is also O(m * n) due to the matrices used for marking reachable cells.
 
-For each character, consider it as the center of a potential palindrome and expand outward to find palindromes with odd length. Increment the count for each palindrome found.
 
-Reset the indices for the even-length palindrome and repeat the expansion process.
 
-Return the total count of palindromic substrings.
 
-Time Complexity
-The time complexity of this solution is O(n^2), where n is the length of the input string. This is because, in the worst case, we might need to expand around each character, and for each character, the expansion process can take O(n) time.
 
-Space Complexity
-The space complexity is O(1) as we use only a constant amount of extra space.
+
 
