@@ -33,3 +33,29 @@ The number of nodes in the tree is in the range [1, 104].
 -231 <= Node.val <= 231 - 1
 
 */
+class Solution {
+public:
+    // Function to check if a binary tree is a valid BST
+    bool isValidBST(TreeNode* root) {
+        // Call the helper function with initial bounds of negative infinity and positive infinity
+        return isValidBSTHelper(root, numeric_limits<long>::min(), numeric_limits<long>::max());
+    }
+
+private:
+    // Helper function to check if a binary tree is a valid BST within specified bounds
+    bool isValidBSTHelper(TreeNode* root, long lower, long upper) {
+        // Base case: if the current node is null, it's a valid BST
+        if (!root) {
+            return true;
+        }
+
+        // Check if the current node's value is within the valid range
+        if (root->val <= lower || root->val >= upper) {
+            return false;
+        }
+
+        // Recursively check the left subtree with updated upper limit
+        // Recursively check the right subtree with updated lower limit
+        return isValidBSTHelper(root->left, lower, root->val) && isValidBSTHelper(root->right, root->val, upper);
+    }
+};
