@@ -31,9 +31,6 @@ intervals[i].length == 2
 -5 * 104 <= starti < endi <= 5 * 104
 */
 
-#include <vector>
-#include <algorithm>
-
 class Solution {
 public:
     // Function to find the minimum number of intervals to remove
@@ -44,7 +41,7 @@ public:
         }
 
         // Sort intervals based on end points using lambda function
-        std::sort(intervals.begin(), intervals.end(), [](const auto& a, const auto& b) {
+       sort(intervals.begin(), intervals.end(), [](const auto& a, const auto& b) {
             return a[1] < b[1];  // Sort by end points in ascending order
         });
 
