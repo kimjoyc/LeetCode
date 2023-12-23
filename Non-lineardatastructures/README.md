@@ -26,6 +26,14 @@ Given preorder and inorder arrays representing a binary tree's preorder and inor
 ### Solution
 The buildTreeHelper algorithm constructs a binary tree from given preorder and inorder traversals. It begins by selecting the first element in the preorder array as the root for the current subtree and then locates the index of this root value in the inorder array to delineate the left and right subtrees. After determining the size of the left subtree, the algorithm recursively builds both left and right subtrees by updating the ranges in both the preorder and inorder arrays. The process continues until the base case is reached, signifying an empty subtree. The function returns the root of the constructed binary tree, ensuring accurate traversal reconstruction. The time complexity is O(N log N) on average and O(N^2) in the worst case, where N is the number of nodes in the binary tree. The linear search in the inorder array for each node contributes to the time complexity, while the space complexity is O(N), determined by the maximum depth of the recursive call stack corresponding to the tree's height.
 
+## Top K Frequent Elements	
+### Problem Statement
+Given an integer array nums and an integer k, the task is to find and return the k most frequent elements from the array. The solution should return the answer in any order. The constraints include the length of the array nums being between 1 and 105, the values of elements in the array falling within the range -104 to 104, and k being in the range [1, the number of unique elements in the array]. It is guaranteed that the result is unique. Additionally, the algorithm is required to achieve a time complexity better than O(n log n), where n is the size of the array.
+### Solution
+The solution aims to find the k most frequent elements in the given array nums. It employs a two-step process, beginning with the creation of a frequency map (freqMap) using an unordered map to store the occurrences of each element. Subsequently, a min-heap (priority queue) is utilized to efficiently track the k most frequent elements, with sorting based on element frequency facilitated by a custom comparator defined through a lambda function. The algorithm populates the min-heap with the first k elements from the frequency map, ensuring the size constraint by removing the least frequent element when necessary. The overall time complexity is O(n + u * log(k)), where n is the input array's size, u is the number of unique elements, and k is the size of the min-heap. The space complexity is O(u + k), with O(u) space required for storing the frequency map, O(k) for the min-heap, and O(k) for the result vector. This approach optimizes time complexity, ensuring a better-than-O(n log n) performance.
+
+
+
 
 
 
