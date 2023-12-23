@@ -1,3 +1,7 @@
+# Week 3 - Non-linear data structures
+Familiarity with non-linear data structures, including trees, graphs, and heaps, is essential. Additionally, knowledge of tree traversal algorithms (in-order, pre-order, post-order) and graph traversal algorithms (breadth-first search, depth-first search) is required.
+
+
 ## Invert/Flip Binary Tree	
 ### Problem Statement
 Given the root of a binary tree, invert the tree, and return its root. The task involves swapping the left and right subtrees of each node in the binary tree.
