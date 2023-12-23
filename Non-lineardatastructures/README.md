@@ -16,6 +16,22 @@ The problem requires finding the minimum number of intervals to remove from a gi
 ### Solution
 The provided C++ solution addresses the problem of finding the minimum number of intervals to remove in order to make the remaining intervals non-overlapping. Utilizing a greedy algorithm, the solution sorts the intervals based on their end points, optimizing for the inclusion of intervals with smaller end points. Subsequently, a single pass through the sorted intervals determines overlapping intervals, allowing for their removal. The algorithm's time complexity is O(N log N), primarily attributed to the sorting step, where N is the number of intervals. In terms of space complexity, the solution is efficient with O(1) space requirements, as the sorting is performed in-place, and the additional space used remains constant. The provided C++ code is encapsulated within a Solution class and includes a member function eraseOverlapIntervals that takes a vector of intervals as input and returns the minimum number of intervals to remove.
 
+## Construct Binary Tree from Preorder and Inorder Traversal	
+### Problem Statement
+Given preorder and inorder arrays representing a binary tree's preorder and inorder traversals, the task is to construct and return the corresponding binary tree.
+### Solution
+The buildTreeHelper algorithm constructs a binary tree from given preorder and inorder traversals. It begins by selecting the first element in the preorder array as the root for the current subtree and then locates the index of this root value in the inorder array to delineate the left and right subtrees. After determining the size of the left subtree, the algorithm recursively builds both left and right subtrees by updating the ranges in both the preorder and inorder arrays. The process continues until the base case is reached, signifying an empty subtree. The function returns the root of the constructed binary tree, ensuring accurate traversal reconstruction. The time complexity is O(N log N) on average and O(N^2) in the worst case, where N is the number of nodes in the binary tree. The linear search in the inorder array for each node contributes to the time complexity, while the space complexity is O(N), determined by the maximum depth of the recursive call stack corresponding to the tree's height.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
