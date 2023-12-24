@@ -56,3 +56,32 @@ Node.val is unique for each node.
 There are no repeated edges and no self-loops in the graph.
 The Graph is connected and all nodes can be visited starting from the given node
 */
+
+class Solution {
+private:
+    unordered_map<Node*, Node*> clonedNodes; // Mapping from original to cloned nodes
+
+public:
+    Node* cloneGraph(Node* node) {
+        // Check if the node is null
+        if (!node) {
+            return nullptr;
+        }
+
+        // Check if the node has already been cloned
+        if (clonedNodes.find(node) != clonedNodes.end()) {
+            return clonedNodes[node];
+        }
+
+        // Create a new node for the current original node
+        Node* clonedNode = new Node(node->val);
+        clonedNodes[node] = clonedNode;
+
+        // Clone neighbors recursively
+        for (Node* neighbor : node->neighbors) {
+            clonedNode->neighbors.push_back(cloneGraph(neighbor));
+        }
+
+        return clonedNode;
+    }
+};
