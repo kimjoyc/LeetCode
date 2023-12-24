@@ -1,7 +1,6 @@
 # Week 3 - Non-linear data structures
 Familiarity with non-linear data structures, including trees, graphs, and heaps, is essential. Additionally, knowledge of tree traversal algorithms (in-order, pre-order, post-order) and graph traversal algorithms (breadth-first search, depth-first search) is required.
 
-
 ## Invert/Flip Binary Tree	
 ### Problem Statement
 Given the root of a binary tree, invert the tree, and return its root. The task involves swapping the left and right subtrees of each node in the binary tree.
@@ -50,6 +49,8 @@ The algorithm employs depth-first search (DFS) to clone a connected undirected g
 ### Complexity Analysis 
 The solution employs a DFS approach to clone a connected undirected graph with a time complexity of O(V + E), where V is the number of nodes and E is the number of edges. DFS ensures each node and edge are visited once, and the cloning process, taking O(V) time, creates a deep copy of nodes and their neighbors. The space complexity, O(V), is mainly due to the HashMap (clonedNodes) storing the mapping between original and cloned nodes, along with the DFS recursion stack. This efficient solution prevents duplication, ensuring accurate cloning of each node and its neighbors.
 
+## Course Schedule	
+### Problem Statement
 
 
 
