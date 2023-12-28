@@ -51,6 +51,15 @@ The solution employs a DFS approach to clone a connected undirected graph with a
 
 ## Course Schedule	
 ### Problem Statement
+The problem "Course Schedule" involves determining the possibility of successfully completing all courses given prerequisites. With courses labeled from 0 to numCourses - 1, the prerequisites array specifies that course bi must be taken before course ai. The task is to return true if it's feasible to finish all courses, and false otherwise.
+### Solution
+The algorithm determines whether it is possible to finish all courses given a certain number of courses and their prerequisites. It constructs an adjacency list and calculates in-degrees for each course based on the provided prerequisites. Utilizing a breadth-first search (BFS) approach, the algorithm initializes a queue with courses having no prerequisites and performs BFS to update in-degrees of neighbors. After the traversal, if any courses remain with in-degrees greater than 0, it indicates the presence of a cycle in the directed graph formed by the prerequisites. If there are no such remaining courses, the algorithm concludes that all courses can be finished successfully.
+### Complexity Analysis 
+The algorithm determines the feasibility of completing all courses given prerequisites using a topological sorting approach. Its time complexity is O(V + E), where V is the number of courses, and E is the number of prerequisites. The algorithm iterates through prerequisites to build a graph and calculates in-degrees. The subsequent BFS traversal takes linear time. The space complexity is also O(V + E), accounting for the space needed by the adjacency list and in-degrees maps. The BFS queue may have up to V vertices, contributing to the overall space complexity. In essence, the algorithm's efficiency is linear with the size of the input graph and prerequisites.
+
+
+
+
 
 
 
